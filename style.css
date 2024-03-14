@@ -52,71 +52,185 @@ main{
     justify-content: center;
 }
 .main-image{
-    animation: goTop 2s ease-out 3.4s forwards, zoom 3s ease-out 5.8s forwards;
+    position: fixed;
+    z-index: 30;
+    top: 20rem;
+    left: 45rem;
+
+    animation: midTop 2s ease-out 3.4s forwards, test 3s ease-in-out 5s forwards, goLeft 3s ease-in-out 5s forwards;
     transform: translateY(60rem);
 }
-
-.left-one-one,
 .right-one-one,
-.mid-image-one {
-  animation: goTop 2s ease-out 3s forwards;
-  transform: translateY(80rem);
+.left-one-one{
+    position: relative;
+    top: -10rem;
+    z-index: 10;
+
+    animation: goTop 2s ease-out 3.5s forwards;
+    transform: translateY(80rem);
+}
+.right-one-two,
+.left-one-two{
+    position: fixed;
+    top: 10rem;
+    z-index: 20;
+
+    animation: goTop 2s ease-out 3.7s forwards;
+    transform: translateY(70rem);
+}
+.right-one-three,
+.left-one-three{
+    position: fixed;
+    top: 30rem;
+
+    animation: goTop 2s ease-out 3.9s forwards;
+    transform: translateY(50rem);
+    z-index: -10;
+}
+.right-one-four,
+.left-one-four{
+    position: fixed;
+    top: 50rem;
+
+    animation: goTop 2s ease-out 4.1s forwards;
+    transform: translateY(90rem);
+}
+.right-two-one,
+.left-two-one{
+    position: fixed;
+    z-index: 10;
+    top: -20rem;
+
+    animation: goBottom 2.5s ease-out 3.4s forwards;
+    transform: translateY(-50rem);
+}
+.right-two-two,
+.left-two-two{
+    position: fixed;
+    z-index: 10;
+    top: 0rem;
+
+    animation: goBottom 2.5s ease-out 3.2s forwards;
+    transform: translateY(-70rem);
+}
+.right-two-three,
+.left-two-three{
+    position: fixed;
+    z-index: 10;
+    top: 20rem;
+
+    animation: goBottom 2.5s ease-out 3s forwards;
+    transform: translateY(-80rem);
+}
+.left-two-four,
+.right-two-four{
+    position: fixed;
+    z-index: 10;
+    top: 40rem;
+
+    animation: goBottom 2.5s ease-out 2.8s forwards;
+    transform: translateY(-90rem);
 }
 
-.left-one-two,
-.right-one-two,
+.left-two-five,
+.right-two-five {
+  animation: goBottom 2.5s ease-out 2.6s forwards;
+  transform: translateY(-100rem);
+}
+
+.right-two-five{
+    position: relative;
+    z-index: 10;
+    top: 60rem;
+}
+.left-two-five{
+    position: fixed;
+    z-index: 10;
+    top: 60rem;
+}
+
+.left-one-five {
+  position: fixed;
+  top: 70rem;
+}
+.right-one-five {
+  position: relative;
+  top: 70rem;
+}
+
 .mid-image-two{
-    animation: goTop 2s ease-out 3.2s forwards;
+    animation: midTop 2s ease-out 3.2s forwards;
     transform: translateY(70rem);
 }
 
-.left-one-three,
-.right-one-three,
 .mid-image-four {
-  animation: goTop 2s ease-out 3.6s forwards;
+  animation: midTop 2s ease-out 3.6s forwards;
   transform: translateY(50rem);
   z-index: -10;
 }
+.mid-image-one{
+    position: fixed;
+    z-index: 10;
+    top: -18rem;
+    left: 45rem;
 
-.right-two-one,
-.left-two-one{
-    animation: goBottom 2s ease-out 3.6s forwards;
-    transform: translateY(-50rem);
+    animation: midTop 2s ease-out 3s forwards;
+    transform: translateY(80rem);
 }
 
-.right-two-two,
-.left-two-two {
-    animation: goBottom 2s ease-out 3.2s forwards;
-    transform: translateY(-70rem);
+.mid-image-two{
+    position: fixed;
+    z-index: 10;
+    top: 0rem;
+    left: 45rem;
 }
 
-.right-two-three,
-.left-two-three {
-  animation: goBottom 2s ease-out 3s forwards;
-  transform: translateY(-80rem);
+.mid-image-four{
+    position: fixed;
+    z-index: 10;
+    top: 40rem;
+    left: 45rem;
+}
+.mid-image-five{
+    position: fixed;
+    z-index: 10;
+    top: 60rem;
+    left: 45rem;
 }
 
-@keyframes zoom {
-    from{
-        transform: scaleY(1);
-    }
+@keyframes test {
     to{
-        transform: scale(4.5);
+        width: 104.5vw;
+        height: 100vh;
+        transform: translateY(-20rem);
     }
 }
 @keyframes goTop {
-    50%{
-        transform: translateY(50rem);
-    }
-    100%{
-        transform: translateY(0);
+    to{
+        transform: translateY(-2rem);
     }
 }
-@keyframes goBottom {
-  50% {
-    transform: translateY(-50rem);
-  }
-  100% {
+@keyframes midTop {
+  to {
     transform: translateY(0);
   }
+}
+
+@keyframes goLeft{
+    to{
+        transform: translateX(-45rem);
+        top: 0rem;
+    }
+}
+
+@keyframes goBottom {
+  to{
+    transform: translateY(10rem);
+  }
+}
+
+@keyframes subZoom{
+    to{
+        transform: scale(2);
+    }
 }
