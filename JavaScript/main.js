@@ -4,6 +4,7 @@ document.getElementById('total-orders').textContent = 0
 document.getElementById('total-bill').textContent = '0.00'
 let totalPrice = []
 
+// Initialize the order counts for each food item
 let orderCountElements = document.querySelectorAll('.order-count')
 orderCountElements.forEach(element => {
   element.textContent = 0
@@ -48,6 +49,7 @@ document.getElementById('increment').addEventListener('click', () => {
     orderCounts[foodName] = 0 // Initialize the count if it doesn't exist
   }
   orderCounts[foodName]++
+  document.getElementById('order-count').textContent = orderCounts[foodName]
   totalPrice.push(price) // Add the price to the totalPrice array
   updateTotalBill()
 
@@ -60,6 +62,7 @@ document.getElementById('decrement').addEventListener('click', () => {
   let foodName = document.getElementById('dialog-food-name').textContent
   if (orderCounts[foodName] > 0) {
     orderCounts[foodName]--
+    document.getElementById('order-count').textContent = orderCounts[foodName]
     // Remove the price from the totalPrice array
     let price = parseFloat(
       document.getElementById('dialog-food-price').textContent
