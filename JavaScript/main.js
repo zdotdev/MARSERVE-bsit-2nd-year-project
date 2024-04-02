@@ -1,7 +1,11 @@
 let dialog = document.getElementById('dialog')
 let orderCount = 0
+document.getElementById('total-orders').textContent = 0
+document.getElementById('total-bill').textContent = '0.00'
+let totalPrice = []
 
-let totalPrice = [0]
+// Initially disable the decrement button
+document.getElementById('decrement').disabled = true
 
 document.querySelector('main').addEventListener('click', function (event) {
   let target = event.target
@@ -18,13 +22,11 @@ document.querySelector('main').addEventListener('click', function (event) {
     dialog.showModal()
   }
 })
+
 document.getElementById('close-button').addEventListener('click', () => {
   dialog.close()
 })
 
-document.getElementById('order-count').textContent = orderCount
-document.getElementById('total-orders').textContent = orderCount
-// Function to update the total bill
 function updateTotalBill () {
   document.getElementById('total-bill').textContent = totalPrice
     .reduce((a, b) => a + b, 0)
@@ -32,7 +34,6 @@ function updateTotalBill () {
 }
 
 document.getElementById('increment').addEventListener('click', () => {
-  // Assuming tPrice is the price of the current item
   let tPrice = parseFloat(
     document.getElementById('dialog-food-price').textContent
   )
@@ -42,16 +43,23 @@ document.getElementById('increment').addEventListener('click', () => {
 
   document.getElementById('order-count').textContent = orderCount
   document.getElementById('total-orders').textContent = orderCount
+
+  // Enable the decrement button after incrementing
+  document.getElementById('decrement').disabled = false
 })
 
 document.getElementById('decrement').addEventListener('click', () => {
   if (orderCount > 0) {
     orderCount--
-    // Remove the last price added to the totalPrice array
     totalPrice.pop()
     updateTotalBill()
 
     document.getElementById('order-count').textContent = orderCount
     document.getElementById('total-orders').textContent = orderCount
+
+    // If orderCount is 0, disable the decrement button again
+    if (orderCount === 0) {
+      document.getElementById('decrement').disabled = true
+    }
   }
 })
