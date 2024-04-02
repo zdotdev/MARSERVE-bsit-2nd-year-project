@@ -6,30 +6,35 @@
             <stock>10</stock>
             <price>9.99</price>
             <description>Delicious pizza with a variety of toppings.</description>
+
         </pizza>
         <burger>
             <name>Burger</name>
             <stock>5</stock>
             <price>4.99</price>
             <description>Classic burger with juicy patty and fresh toppings.</description>
+
         </burger>
         <pasta>
             <name>Pasta</name>
             <stock>8</stock>
             <price>7.99</price>
             <description>Classic spaghetti with rich tomato sauce and savory meatballs.</description>
+
         </pasta>
         <sushi>
             <name>Sushi</name>
             <stock>3</stock>
             <price>12.99</price>
             <description>Traditional Japanese dish made with vinegared rice and various ingredients such as raw or cooked seafood, vegetables, and sometimes tropical fruits.</description>
+
         </sushi>
         <salad>
             <name>Salad</name>
             <stock>6</stock>
             <price>6.99</price>
             <description>Healthy salad made with fresh vegetables and a variety of dressings.</description>
+
         </salad>
 
         <sandwich>
@@ -37,24 +42,28 @@
             <stock>7</stock>
             <price>5.99</price>
             <description>Classic sandwich with a variety of fillings.</description>
+
         </sandwich>
         <steak>
             <name>Steak</name>
             <stock>4</stock>
             <price>15.99</price>
             <description>Tender and juicy steak cooked to perfection.</description>
+
         </steak>
         <chicken>
             <name>Chicken</name>
             <stock>9</stock>
             <price>8.99</price>
             <description>Delicious chicken dish with a variety of flavors.</description>
+
         </chicken>
         <noodles>
             <name>Noodles</name>
             <stock>6</stock>
             <price>7.99</price>
             <description>Authentic noodles dish with a variety of toppings and sauces.</description>
+
         </noodles>
     </list>
 </foods>

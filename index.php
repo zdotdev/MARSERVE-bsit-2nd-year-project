@@ -31,6 +31,7 @@ foreach($xml->list->children() as $food) {
             echo "
             <div id='card-container' data-description='{$food_data['description']}' data-price='{$food_data['price']}' data-name='{$food_data['name']}'>
                 <h2>{$food_data['name']}</h2>
+                <p class='order-count' id='order-count-{$food_data['name']}'></p>
                 <h3>Price: {$food_data['price']} php</h3>
             </div>";
         }
