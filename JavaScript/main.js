@@ -93,3 +93,13 @@ document.getElementById('decrement').addEventListener('click', () => {
       orderCounts[foodName] > 0 ? orderCounts[foodName] : ''
   }
 })
+
+document
+  .getElementById('save-order-btn')
+  .addEventListener('click', function () {
+    let totalOrders = document.getElementById('total-orders').innerText
+    let totalBill = document.getElementById('total-bill').innerText
+
+    document.getElementById('total-orders-input').value = totalOrders
+    document.getElementById('total-bill-input').value = totalBill
+  })

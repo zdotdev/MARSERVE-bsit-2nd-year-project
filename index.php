@@ -35,6 +35,32 @@ foreach($xml->sweets->children() as $food) {
     $sweets_array[] = $food_data;
 }
 ?>
+<?php
+if(isset($_POST['save_order'])) {
+    $totalOrders = $_POST['total_orders'];
+    $totalBill = $_POST['total_bill'];
+
+    $ordersFile = './Data/orders.xml';
+
+    // Check if the file exists, if not create a new XML structure
+    if (file_exists($ordersFile)) {
+        // Load existing XML file
+        $ordersXml = simplexml_load_file($ordersFile) or die("Error: Cannot create object");
+    } else {
+        // Create a new XML structure if the file doesn't exist
+        $ordersXml = new SimpleXMLElement('<?xml version="1.0"?><orders></orders>');
+    }
+
+    // Add a new order element
+    $order = $ordersXml->addChild('order');
+    $order->addChild('total_orders', $totalOrders);
+    $order->addChild('total_bill', $totalBill);
+
+    // Save the XML to the file
+    $ordersXml->asXML($ordersFile);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +75,11 @@ foreach($xml->sweets->children() as $food) {
             <p>Receipt:</p>
             <p>Total orders: <span id="total-orders"></span></p>
             <p>Total bill: <span id="total-bill"></span> php</p>
+            <form id="save-order-form" action="" method="post">
+                <input type="hidden" name="total_orders" id="total-orders-input">
+                <input type="hidden" name="total_bill" id="total-bill-input">
+                <button type="submit" name="save_order" id="save-order-btn">Save Order</button>
+            </form>
         </div>
 
         <ul>
