@@ -1,69 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <foods>
-    <list>
+    <meals>
         <pizza>
             <name>Pizza</name>
-            <stock>10</stock>
             <price>9.99</price>
             <description>Delicious pizza with a variety of toppings.</description>
-
         </pizza>
         <burger>
             <name>Burger</name>
-            <stock>5</stock>
             <price>4.99</price>
             <description>Classic burger with juicy patty and fresh toppings.</description>
-
         </burger>
         <pasta>
             <name>Pasta</name>
-            <stock>8</stock>
             <price>7.99</price>
             <description>Classic spaghetti with rich tomato sauce and savory meatballs.</description>
-
         </pasta>
         <sushi>
             <name>Sushi</name>
-            <stock>3</stock>
             <price>12.99</price>
             <description>Traditional Japanese dish made with vinegared rice and various ingredients such as raw or cooked seafood, vegetables, and sometimes tropical fruits.</description>
-
         </sushi>
         <salad>
             <name>Salad</name>
-            <stock>6</stock>
             <price>6.99</price>
             <description>Healthy salad made with fresh vegetables and a variety of dressings.</description>
-
         </salad>
-
         <sandwich>
             <name>Sandwich</name>
-            <stock>7</stock>
             <price>5.99</price>
             <description>Classic sandwich with a variety of fillings.</description>
-
         </sandwich>
         <steak>
             <name>Steak</name>
-            <stock>4</stock>
             <price>15.99</price>
             <description>Tender and juicy steak cooked to perfection.</description>
-
         </steak>
         <chicken>
             <name>Chicken</name>
-            <stock>9</stock>
             <price>8.99</price>
             <description>Delicious chicken dish with a variety of flavors.</description>
-
         </chicken>
         <noodles>
             <name>Noodles</name>
-            <stock>6</stock>
             <price>7.99</price>
             <description>Authentic noodles dish with a variety of toppings and sauces.</description>
-
         </noodles>
-    </list>
+    </meals>
+    <snacks>
+        <chips>
+            <name>Chips</name>
+            <price>2.99</price>
+            <description>Crunchy and flavorful chips in various flavors.</description>
+        </chips>
+        <cookies>
+            <name>Cookies</name>
+            <price>3.99</price>
+            <description>Delicious cookies in different flavors and textures.</description>
+        </cookies>
+        <candy>
+            <name>Candy</name>
+            <price>1.99</price>
+            <description>Sweet and colorful candies for a delightful treat.</description>
+        </candy>
+        <popcorn>
+            <name>Popcorn</name>
+            <price>4.99</price>
+            <description>Classic movie theater popcorn for a tasty snack.</description>
+        </popcorn>
+        <nuts>
+            <name>Nuts</name>
+            <price>5.99</price>
+            <description>Assorted nuts for a healthy and satisfying snack.</description>
+        </nuts>
+        <chocolate>
+            <name>Chocolate</name>
+            <price>2.49</price>
+            <description>Smooth and creamy chocolate bars in various flavors.</description>
+        </chocolate>
+        <iceCream>
+            <name>Ice Cream</name>
+            <price>3.99</price>
+            <description>Delicious ice cream in a variety of flavors and toppings.</description>
+        </iceCream>
+        <pretzels>
+            <name>Pretzels</name>
+            <price>1.99</price>
+            <description>Crunchy pretzels for a savory snack.</description>
+        </pretzels>
+        <gummies>
+            <name>Gummies</name>
+            <price>2.99</price>
+            <description>Gummy candies in fun shapes and flavors.</description>
+        </gummies>
+        <yogurt>
+            <name>Yogurt</name>
+            <price>2.49</price>
+            <description>Healthy and creamy yogurt in various flavors.</description>
+        </yogurt>
+    </snacks>
+    <beverages>
+        <soda>
+            <name>Soda</name>
+            <price>1.99</price>
+            <description>Refreshing carbonated beverage in various flavors.</description>
+        </soda>
+        <juice>
+            <name>Juice</name>
+            <price>2.49</price>
+            <description>Natural fruit juice made from fresh fruits.</description>
+        </juice>
+        <water>
+            <name>Water</name>
+            <price>0.99</price>
+            <description>Pure and refreshing water for hydration.</description>
+        </water>
+        <energyDrink>
+            <name>Energy Drink</name>
+            <price>3.99</price>
+            <description>Highly caffeinated beverage for an energy boost.</description>
+        </energyDrink>
+        <icedTea>
+            <name>Iced Tea</name>
+            <price>1.99</price>
+            <description>Cool and refreshing tea with ice.</description>
+        </icedTea>
+        <coffee>
+            <name>Coffee</name>
+            <price>2.99</price>
+            <description>Hot or iced coffee made from freshly brewed beans.</description>
+        </coffee>
+        <milkshake>
+            <name>Milkshake</name>
+            <price>4.99</price>
+            <description>Thick and creamy milkshake in various flavors.</description>
+        </milkshake>
+        <lemonade>
+            <name>Lemonade</name>
+            <price>2.49</price>
+            <description>Refreshing citrus drink made from lemons.</description>
+        </lemonade>
+        <smoothie>
+            <name>Smoothie</name>
+            <price>3.99</price>
+            <description>Healthy and fruity blended drink.</description>
+        </smoothie>
+        <sportsDrink>
+            <name>Sports Drink</name>
+            <price>2.99</price>
+            <description>Electrolyte-rich beverage for hydration during physical activities.</description>
+        </sportsDrink>
+    </beverages>
+    <sweets>
+        <cake>
+            <name>Cake</name>
+            <price>6.99</price>
+            <description>Delicious cake with various flavors and frostings.</description>
+        </cake>
+        <cookies>
+            <name>Cookies</name>
+            <price>3.99</price>
+            <description>Homemade cookies in different flavors and textures.</description>
+        </cookies>
+        <chocolate>
+            <name>Chocolate</name>
+            <price>4.99</price>
+            <description>Indulgent chocolate treats in a variety of forms.</description>
+        </chocolate>
+        <candy>
+            <name>Candy</name>
+            <price>2.49</price>
+            <description>Assorted candies for a sweet and satisfying treat.</description>
+        </candy>
+        <iceCream>
+            <name>Ice Cream</name>
+            <price>5.99</price>
+            <description>Rich and creamy ice cream in a variety of flavors.</description>
+        </iceCream>
+        <cupcake>
+            <name>Cupcake</name>
+            <price>2.99</price>
+            <description>Delightful cupcakes with fluffy frosting and colorful decorations.</description>
+        </cupcake>
+        <donut>
+            <name>Donut</name>
+            <price>1.99</price>
+            <description>Classic donuts in various flavors and toppings.</description>
+        </donut>
+        <pastry>
+            <name>Pastry</name>
+            <price>3.99</price>
+            <description>Flaky and delicious pastries with sweet fillings.</description>
+        </pastry>
+        <churro>
+            <name>Churro</name>
+            <price>2.49</price>
+            <description>Crunchy and cinnamon-sugar coated churros.</description>
+        </churro>
+        <macaron>
+            <name>Macaron</name>
+            <price>4.99</price>
+            <description>Delicate and colorful macarons with various flavors.</description>
+        </macaron>
+    </sweets>
 </foods>

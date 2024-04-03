@@ -40,6 +40,18 @@ function updateTotalBill () {
   document.getElementById('total-bill').textContent = tPrice
 }
 
+function updateTotalOrders () {
+  let totalOrdersText = ''
+  for (let foodName in orderCounts) {
+    if (orderCounts[foodName] > 0) {
+      totalOrdersText += `${foodName}: ${orderCounts[foodName]}, `
+    }
+  }
+  // Remove the last comma and space
+  totalOrdersText = totalOrdersText.slice(0, -2)
+  document.getElementById('total-orders').textContent = totalOrdersText
+}
+
 document.getElementById('increment').addEventListener('click', () => {
   let foodName = document.getElementById('dialog-food-name').textContent
   let price = parseFloat(
@@ -52,6 +64,7 @@ document.getElementById('increment').addEventListener('click', () => {
   document.getElementById('order-count').textContent = orderCounts[foodName]
   totalPrice.push(price) // Add the price to the totalPrice array
   updateTotalBill()
+  updateTotalOrders() // Update the total orders display
 
   // Update the order count for the specific food item
   document.getElementById(`order-count-${foodName}`).textContent =
@@ -72,6 +85,7 @@ document.getElementById('decrement').addEventListener('click', () => {
       totalPrice.splice(index, 1)
     }
     updateTotalBill()
+    updateTotalOrders() // Update the total orders display
 
     // Update the order count for the specific food item
     document.getElementById(`order-count-${foodName}`).textContent =

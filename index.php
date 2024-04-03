@@ -2,13 +2,13 @@
 $data = './Data/data.xml';
 $xml = simplexml_load_file($data) or die("Error: Cannot create object");
 
-$data_array = [];
-foreach($xml->list->children() as $food) {
+$meal_array = [];
+foreach($xml->meals->children() as $food) {
     $food_data = [];
     foreach($food->children() as $key => $value) {
         $food_data[$key] = (string)$value;
     }
-    $data_array[] = $food_data;
+    $meal_array[] = $food_data;
 }
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ foreach($xml->list->children() as $food) {
             <p>Total bill: <span id="total-bill"></span> php</p>
         </div>
         <?php
-        foreach ($data_array as $food_data) {
+        foreach ($meal_array as $food_data) {
             echo "
             <div id='card-container' data-description='{$food_data['description']}' data-price='{$food_data['price']}' data-name='{$food_data['name']}'>
                 <h2>{$food_data['name']}</h2>
