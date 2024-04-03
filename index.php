@@ -10,6 +10,30 @@ foreach($xml->meals->children() as $food) {
     }
     $meal_array[] = $food_data;
 }
+$snacks_array = [];
+foreach($xml->snacks->children() as $food) {
+    $food_data = [];
+    foreach($food->children() as $key => $value) {
+        $food_data[$key] = (string)$value;
+    }
+    $snacks_array[] = $food_data;
+}
+$beverages_array = [];
+foreach($xml->beverages->children() as $food) {
+    $food_data = [];
+    foreach($food->children() as $key => $value) {
+        $food_data[$key] = (string)$value;
+    }
+    $beverages_array[] = $food_data;
+}
+$sweets_array = [];
+foreach($xml->sweets->children() as $food) {
+    $food_data = [];
+    foreach($food->children() as $key => $value) {
+        $food_data[$key] = (string)$value;
+    }
+    $sweets_array[] = $food_data;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,16 +50,58 @@ foreach($xml->meals->children() as $food) {
             <p>Total orders: <span id="total-orders"></span></p>
             <p>Total bill: <span id="total-bill"></span> php</p>
         </div>
-        <?php
-        foreach ($meal_array as $food_data) {
-            echo "
-            <div id='card-container' data-description='{$food_data['description']}' data-price='{$food_data['price']}' data-name='{$food_data['name']}'>
-                <h2>{$food_data['name']}</h2>
-                <p class='order-count' id='order-count-{$food_data['name']}'></p>
-                <h3>Price: {$food_data['price']} php</h3>
-            </div>";
-        }
-        ?>
+        <section>
+            <h2>Meals:</h2>
+            <?php
+            foreach ($meal_array as $meal_data) {
+                echo "
+                <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
+                    <h2>{$meal_data['name']}</h2>
+                    <p class='order-count' id='order-count-{$meal_data['name']}'></p>
+                    <h3>Price: {$meal_data['price']} php</h3>
+                </div>";
+            }
+            ?>
+        </section>
+        <section>
+            <h2>Snacks:</h2>
+            <?php
+            foreach ($snacks_array as $snack_data) {
+                echo "
+                <div id='card-container' data-description='{$snack_data['description']}' data-price='{$snack_data['price']}' data-name='{$snack_data['name']}'>
+                    <h2>{$snack_data['name']}</h2>
+                    <p class='order-count' id='order-count-{$snack_data['name']}'></p>
+                    <h3>Price: {$snack_data['price']} php</h3>
+                </div>";
+            }
+            ?>
+        </section>
+        <section>
+            <h2>Beverages:</h2>
+            <?php
+            foreach ($beverages_array as $beverage_data) {
+                echo "
+                <div id='card-container' data-description='{$beverage_data['description']}' data-price='{$beverage_data['price']}' data-name='{$beverage_data['name']}'>
+                    <h2>{$beverage_data['name']}</h2>
+                    <p class='order-count' id='order-count-{$beverage_data['name']}'></p>
+                    <h3>Price: {$beverage_data['price']} php</h3>
+                </div>";
+            }
+            ?>
+        </section>
+        <section>
+            <h2>Sweets:</h2>
+            <?php
+            foreach ($sweets_array as $sweet_data) {
+                echo "
+                <div id='card-container' data-description='{$sweet_data['description']}' data-price='{$sweet_data['price']}' data-name='{$sweet_data['name']}'>
+                    <h2>{$sweet_data['name']}</h2>
+                    <p class='order-count' id='order-count-{$sweet_data['name']}'></p>
+                    <h3>Price: {$sweet_data['price']} php</h3>
+                </div>";
+            }
+            ?>
+        </section>
     </main>
     <dialog id="dialog">
         <h3 id="dialog-food-name"></h3>
