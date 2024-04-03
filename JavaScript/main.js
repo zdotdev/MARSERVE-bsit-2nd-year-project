@@ -7,7 +7,7 @@ let totalPrice = []
 // Initialize the order counts for each food item
 let orderCountElements = document.querySelectorAll('.order-count')
 orderCountElements.forEach(element => {
-  element.textContent = 0
+  element.textContent = ''
 })
 
 document.querySelector('main').addEventListener('click', function (event) {
@@ -49,7 +49,7 @@ function updateTotalOrders () {
   }
   // Remove the last comma and space
   totalOrdersText = totalOrdersText.slice(0, -2)
-  document.getElementById('total-orders').textContent = totalOrdersText
+  document.getElementById('total-orders').textContent = totalOrdersText || 0
 }
 
 document.getElementById('increment').addEventListener('click', () => {
@@ -68,14 +68,15 @@ document.getElementById('increment').addEventListener('click', () => {
 
   // Update the order count for the specific food item
   document.getElementById(`order-count-${foodName}`).textContent =
-    orderCounts[foodName]
+    orderCounts[foodName] > 0 ? orderCounts[foodName] : ''
 })
 
 document.getElementById('decrement').addEventListener('click', () => {
   let foodName = document.getElementById('dialog-food-name').textContent
   if (orderCounts[foodName] > 0) {
     orderCounts[foodName]--
-    document.getElementById('order-count').textContent = orderCounts[foodName]
+    document.getElementById('order-count').textContent =
+      orderCounts[foodName] || 0
     // Remove the price from the totalPrice array
     let price = parseFloat(
       document.getElementById('dialog-food-price').textContent
@@ -89,88 +90,6 @@ document.getElementById('decrement').addEventListener('click', () => {
 
     // Update the order count for the specific food item
     document.getElementById(`order-count-${foodName}`).textContent =
-      orderCounts[foodName]
+      orderCounts[foodName] > 0 ? orderCounts[foodName] : ''
   }
-})
-
-// declarative
-const categories = {
-  meals: `<section>
-            <h2>Meals:</h2>
-            <?php
-            foreach ($meal_array as $meal_data) {
-                echo "
-                <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
-                    <h2>{$meal_data['name']}</h2>
-                    <p class='order-count' id='order-count-{$meal_data['name']}'></p>
-                    <h3>Price: {$meal_data['price']} php</h3>
-                </div>";
-            }
-            ?>
-        </section>`,
-  snacks: `<section>
-            <h2>Snacks:</h2>
-            <?php
-            foreach ($snacks_array as $snack_data) {
-                echo "
-                <div id='card-container' data-description='{$snack_data['description']}' data-price='{$snack_data['price']}' data-name='{$snack_data['name']}'>
-                    <h2>{$snack_data['name']}</h2>
-                    <p class='order-count' id='order-count-{$snack_data['name']}'></p>
-                    <h3>Price: {$snack_data['price']} php</h3>
-                </div>";
-            }
-            ?>
-        </section>`,
-  beverages: `<section>
-            <h2>Beverages:</h2>
-            <?php
-            foreach ($beverages_array as $beverage_data) {
-                echo "
-                <div id='card-container' data-description='{$beverage_data['description']}' data-price='{$beverage_data['price']}' data-name='{$beverage_data['name']}'>
-                    <h2>{$beverage_data['name']}</h2>
-                    <p class='order-count' id='order-count-{$beverage_data['name']}'></p>
-                    <h3>Price: {$beverage_data['price']} php</h3>
-                </div>";
-            }
-            ?>
-        </section>`,
-  sweets: `<section>
-            <h2>Sweets:</h2>
-            <?php
-            foreach ($sweets_array as $sweet_data) {
-                echo "
-                <div id='card-container' data-description='{$sweet_data['description']}' data-price='{$sweet_data['price']}' data-name='{$sweet_data['name']}'>
-                    <h2>{$sweet_data['name']}</h2>
-                    <p class='order-count' id='order-count-{$sweet_data['name']}'></p>
-                    <h3>Price: {$sweet_data['price']} php</h3>
-                </div>";
-            }
-            ?>
-        </section>`
-}
-
-document.querySelector('#container').innerHTML = categories.meals
-
-const activeButtons = document.querySelectorAll('.category')
-activeButtons.forEach(a => {
-  a.addEventListener('click', function () {
-    switch (true) {
-      case window.location.href.includes('#meals'):
-        document.querySelector('#container').innerHTML = ''
-        document.querySelector('#container').innerHTML = categories.meals
-        break
-      case window.location.href.includes('#snacks'):
-        document.querySelector('#container').innerHTML = ''
-        document.querySelector('#container').innerHTML = categories.snacks
-        break
-      case window.location.href.includes('#beverages'):
-        document.querySelector('#container').innerHTML = ''
-        document.querySelector('#container').innerHTML = categories.beverages
-        break
-      case window.location.href.includes('#sweets'):
-        document.querySelector('#container').innerHTML = ''
-        document.querySelector('#container').innerHTML = categories.sweets
-        break
-    }
-  })
 })
