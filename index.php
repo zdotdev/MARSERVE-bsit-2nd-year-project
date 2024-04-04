@@ -143,8 +143,8 @@ if(isset($_POST['save_order'])) {
                 }
                 ?>
         </section>
-        </div>
-    </main>
+    </div>
+</main>
     <dialog id="dialog">
         <h3 id="dialog-food-name"></h3>
         <p>Price: <span id="dialog-food-price"></span></p>
