@@ -34,11 +34,11 @@ foreach($xml->sweets->children() as $food) {
     }
     $sweets_array[] = $food_data;
 }
-?>
-<?php
 if(isset($_POST['save_order'])) {
     $totalOrders = $_POST['total_orders'];
     $totalBill = $_POST['total_bill'];
+    $table = $_GET['table'] ?? '';
+    $random_letters = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 5);
 
     $ordersFile = './Data/orders.xml';
 
@@ -55,6 +55,8 @@ if(isset($_POST['save_order'])) {
     $order = $ordersXml->addChild('order');
     $order->addChild('total_orders', $totalOrders);
     $order->addChild('total_bill', $totalBill);
+    $order->addChild('table_number', $table);
+    $order->addChild('order_id', $random_letters);
 
     // Save the XML to the file
     $ordersXml->asXML($ordersFile);
