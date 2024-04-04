@@ -34,11 +34,11 @@ foreach($xml->sweets->children() as $food) {
     }
     $sweets_array[] = $food_data;
 }
+$random_letters = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 5);
 if(isset($_POST['save_order'])) {
     $totalOrders = $_POST['total_orders'];
     $totalBill = $_POST['total_bill'];
     $table = $_GET['table'] ?? '';
-    $random_letters = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 5);
 
     $ordersFile = './Data/orders.xml';
 
@@ -61,7 +61,7 @@ if(isset($_POST['save_order'])) {
     // Save the XML to the file
     $ordersXml->asXML($ordersFile);
 
-    header("Location: http://localhost/orderSystem/admin.php");
+    header("Location: http://localhost/orderSystem/landing.php?orderId=$random_letters");
     exit();
 }
 ?>
