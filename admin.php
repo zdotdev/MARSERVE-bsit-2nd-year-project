@@ -69,7 +69,7 @@ if (isset($_POST['save_food'])) {
     $foodXML->asXML($dataFile);
 
     // Redirect to prevent form resubmission
-    header("Location: {$_SERVER['REQUEST_URI']}");
+    header("Location: http://localhost/orderSystem/admin.php");
     exit();
 }
 if (isset($_POST['save_edited_food'])) {
@@ -121,7 +121,7 @@ if (isset($_POST['save_edited_food'])) {
     $foodXML->asXML($dataFile);
 
     // Redirect to prevent form resubmission
-    header("Location: {$_SERVER['REQUEST_URI']}");
+    header("Location: http://localhost/orderSystem/admin.php");
     exit();
 }
 ?>
@@ -148,22 +148,6 @@ if (isset($_POST['save_edited_food'])) {
             <button type="submit" name="save_food" id="save-order-btn">Add Food Item</button>
         </form>
     </div>
-    <!-- <dialog id="edit-dialog">
-        <form id="save-edited-form" action="" method="post">
-            <input type="text" name="edit_food_name" placeholder="Food Name">
-            <input type="text" name="edit_food_name" placeholder="Food Name">
-            <input type="number" step="0.01" name="edit_food_price" placeholder="Price">
-            <input type="text" name="edit_food_description" placeholder="Description">
-            <input type="file" name="edit_food_image">
-            <select name="edit_food_category">
-                <option value="meals" selected>Meal</option>
-                <option value="snacks">Snack</option>
-                <option value="beverages">Beverage</option>
-                <option value="sweets">Sweet</option>
-            </select>
-            <button type="submit" name="save_edited_food" id="save-edited-btn">Edited Food Item</button>
-        </form>
-    </dialog> -->
     <div>
         <section id="meals">
             <h2>Meals:</h2>

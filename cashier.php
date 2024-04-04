@@ -17,6 +17,23 @@
     } else {
         echo "No orders found.";
     }
+    if (isset($_POST['delete_order'])) {
+            $order_id = $_POST['order_id'];
+            $xml = simplexml_load_file($data);
+            if ($xml === false) {
+                die("Error: Cannot load XML file.");
+            }
+            foreach ($xml->order as $order) {
+                if ((string) $order->order_id === $order_id) {
+                    $dom = dom_import_simplexml($order);
+                    $dom->parentNode->removeChild($dom);
+                    break;
+                }
+            }
+            $xml->asXML($data);
+            header("Location: http://localhost/orderSystem/cashier.php");
+            exit();
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,22 +56,6 @@
                     <button type='submit' name='delete_order'>Delete</button>
                 </form>
             </div>";
-        }
-
-        if (isset($_POST['delete_order'])) {
-            $order_id = $_POST['order_id'];
-            $xml = simplexml_load_file($data);
-            if ($xml === false) {
-                die("Error: Cannot load XML file.");
-            }
-            foreach ($xml->order as $order) {
-                if ((string) $order->order_id === $order_id) {
-                    $dom = dom_import_simplexml($order);
-                    $dom->parentNode->removeChild($dom);
-                    break;
-                }
-            }
-            $xml->asXML($data);
         }
         ?>
     </div>

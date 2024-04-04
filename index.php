@@ -60,6 +60,9 @@ if(isset($_POST['save_order'])) {
 
     // Save the XML to the file
     $ordersXml->asXML($ordersFile);
+
+    header("Location: http://localhost/orderSystem/admin.php");
+    exit();
 }
 ?>
 
