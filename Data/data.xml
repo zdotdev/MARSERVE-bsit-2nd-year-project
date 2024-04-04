@@ -44,7 +44,7 @@
             <description>Classic sandwich with a variety of fillings.</description>
             <image>'./Image/sandwich.jpg'</image>
         </sandwich>
-    </meals>
+    <Banana><name>Banana</name><price>12</price><description>aa</description><id>hrjfe</id><image>Screenshot (356).png</image></Banana></meals>
     <snacks>
         <chips>
             <id>snack-0</id>

@@ -47,6 +47,7 @@ if (isset($_POST['save_food'])) {
     $foodPrice = $_POST['food_price'];
     $foodDescription = $_POST['food_description'];
     $foodCategory = $_POST['food_category'];
+    $foodImage = $_POST['food_image'];
 
     // File and random string generation
     $randomLetters = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 5);
@@ -62,6 +63,7 @@ if (isset($_POST['save_food'])) {
     $foodItem->addChild('price', $foodPrice);
     $foodItem->addChild('description', $foodDescription);
     $foodItem->addChild('id', $randomLetters);
+    $foodItem->addChild('image', $foodImage);
 
     // Save the XML to the file
     $foodXML->asXML($dataFile);
@@ -84,6 +86,7 @@ if (isset($_POST['save_food'])) {
             <input type="text" name="food_name" placeholder="Food Name">
             <input type="number" step="0.01" name="food_price" placeholder="Price">
             <input type="text" name="food_description" placeholder="Description">
+            <input type="file" name="food_image">
             <select name="food_category">
                 <option value="meals" selected>Meal</option>
                 <option value="snacks">Snack</option>
