@@ -55,7 +55,6 @@
                 }
             }
             $xml->asXML($data);
-            echo "Order deleted successfully.";
         }
         ?>
     </div>
@@ -80,7 +79,7 @@
 
         // Function to initiate long polling
         function startLongPolling() {
-            setInterval(checkForChanges, 5000); // Poll every 1 second
+            setInterval(checkForChanges, 3000); // Poll every 1 second
         }
 
         // Start long polling when the window loads

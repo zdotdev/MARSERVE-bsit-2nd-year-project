@@ -103,3 +103,25 @@ document
     document.getElementById('total-orders-input').value = totalOrders
     document.getElementById('total-bill-input').value = totalBill
   })
+
+const saveOrderBtn = document.getElementById('save-order-btn')
+
+// Function to disable the saveOrderBtn when the total bill is 0
+function disableSaveOrderBtn () {
+  const totalBill = parseFloat(
+    document.getElementById('total-bill').textContent
+  )
+  if (totalBill === 0) {
+    saveOrderBtn.disabled = true
+  } else {
+    saveOrderBtn.disabled = false
+  }
+}
+
+// Call the function to disable the saveOrderBtn initially
+disableSaveOrderBtn()
+
+// Listen for changes in the total bill and disable the saveOrderBtn accordingly
+document
+  .getElementById('total-bill')
+  .addEventListener('DOMSubtreeModified', disableSaveOrderBtn)

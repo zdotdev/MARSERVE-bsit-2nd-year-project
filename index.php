@@ -80,7 +80,7 @@ if(isset($_POST['save_order'])) {
             <form id="save-order-form" action="" method="post">
                 <input type="hidden" name="total_orders" id="total-orders-input">
                 <input type="hidden" name="total_bill" id="total-bill-input">
-                <button type="submit" name="save_order" id="save-order-btn">Save Order</button>
+                <button type="submit" name="save_order" id="save-order-btn">Place Order</button>
             </form>
         </div>
 
