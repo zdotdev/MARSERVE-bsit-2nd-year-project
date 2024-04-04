@@ -103,7 +103,7 @@ if (isset($_POST['save_food'])) {
                 foreach ($meal_array as $meal_data) {
                     echo "
                     <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
-                        <img src={$meal_data['image']} alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
+                        <img src='./Image/{$meal_data['image']}' alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
                         <h2>{$meal_data['name']}</h2>
                         <p class='order-count' id='order-count-{$meal_data['name']}'></p>
                         <h3>Price: {$meal_data['price']} php</h3>
@@ -136,7 +136,7 @@ if (isset($_POST['save_food'])) {
                 foreach ($snacks_array as $snack_data) {
                     echo "
                     <div id='card-container' data-description='{$snack_data['description']}' data-price='{$snack_data['price']}' data-name='{$snack_data['name']}'>
-                        <img src={$snack_data['image']} alt='{$snack_data['id']}' style='width: 10rem; height: 10rem;'>
+                        <img src='./Image/{$snack_data['image']}' alt='{$snack_data['id']}' style='width: 10rem; height: 10rem;'>
                         <h2>{$snack_data['name']}</h2>
                         <p class='order-count' id='order-count-{$snack_data['name']}'></p>
                         <h3>Price: {$snack_data['price']} php</h3>
@@ -169,7 +169,7 @@ if (isset($_POST['save_food'])) {
                 foreach ($beverages_array as $beverage_data) {
                     echo "
                     <div id='card-container' data-description='{$beverage_data['description']}' data-price='{$beverage_data['price']}' data-name='{$beverage_data['name']}'>
-                        <img src={$beverage_data['image']} alt='{$beverage_data['id']}' style='width: 10rem; height: 10rem;'>
+                        <img src='./Image/{$beverage_data['image']}' alt='{$beverage_data['id']}' style='width: 10rem; height: 10rem;'>
                         <h2>{$beverage_data['name']}</h2>
                         <p class='order-count' id='order-count-{$beverage_data['name']}'></p>
                         <h3>Price: {$beverage_data['price']} php</h3>
@@ -202,7 +202,7 @@ if (isset($_POST['save_food'])) {
                 foreach ($sweets_array as $sweet_data) {
                     echo "
                     <div id='card-container' data-description='{$sweet_data['description']}' data-price='{$sweet_data['price']}' data-name='{$sweet_data['name']}'>
-                        <img src={$sweet_data['image']} alt='{$sweet_data['id']}' style='width: 10rem; height: 10rem;'>
+                        <img src='./Image/{$sweet_data['image']}' alt='{$sweet_data['id']}' style='width: 10rem; height: 10rem;'>
                         <h2>{$sweet_data['name']}</h2>
                         <p class='order-count' id='order-count-{$sweet_data['name']}'></p>
                         <h3>Price: {$sweet_data['price']} php</h3>
