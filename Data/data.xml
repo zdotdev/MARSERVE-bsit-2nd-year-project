@@ -2,7 +2,6 @@
 <foods>
     <meals>
         <pizza>
-        
             <id>meal-0</id>
             <name>Pizza</name>
             <price>9.99</price>
@@ -155,6 +154,5 @@
             <description>Rich and creamy ice cream in a variety of flavors.</description>
             <image>pizza.jpg</image>
         </iceCream>
-        
     </sweets>
 </foods>

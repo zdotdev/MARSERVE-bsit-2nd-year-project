@@ -72,6 +72,58 @@ if (isset($_POST['save_food'])) {
     header("Location: {$_SERVER['REQUEST_URI']}");
     exit();
 }
+if (isset($_POST['save_edited_food'])) {
+    // Extracting form data
+    $foodName = $_POST['edit_food_name'];
+    $foodPrice = $_POST['edit_food_price'];
+    $foodDescription = $_POST['edit_food_description'];
+    $foodCategory = $_POST['edit_food_category'];
+    $foodImage = $_POST['edit_food_image'];
+    $foodId = $_POST['edit_food_id']; // Assuming you have an ID field in your form
+
+    // Load XML file
+    if (file_exists($dataFile)) {
+        $foodXML = simplexml_load_file($dataFile) or die("Error: Cannot create object");
+    } else {
+        die("Error: XML file not found");
+    }
+
+    // Check if the category exists, if not, create it
+    if (!isset($foodXML->$foodCategory)) {
+        $foodXML->addChild($foodCategory);
+    }
+
+    // Check if the item exists by its ID
+    $itemExists = false;
+    foreach ($foodXML->$foodCategory->children() as $item) {
+        if ((string)$item->id === $foodId) {
+            // Update the item's data
+            $item->name = $foodName;
+            $item->price = $foodPrice;
+            $item->description = $foodDescription;
+            $item->image = $foodImage;
+            $itemExists = true;
+            break;
+        }
+    }
+
+    // If the item doesn't exist, add it as a new item
+    if (!$itemExists) {
+        $foodItem = $foodXML->$foodCategory->addChild($foodName);
+        $foodItem->addChild('name', $foodName);
+        $foodItem->addChild('price', $foodPrice);
+        $foodItem->addChild('description', $foodDescription);
+        $foodItem->addChild('id', $foodId); // Assuming you want to use the provided ID
+        $foodItem->addChild('image', $foodImage);
+    }
+
+    // Save the XML to the file
+    $foodXML->asXML($dataFile);
+
+    // Redirect to prevent form resubmission
+    header("Location: {$_SERVER['REQUEST_URI']}");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,24 +148,57 @@ if (isset($_POST['save_food'])) {
             <button type="submit" name="save_food" id="save-order-btn">Add Food Item</button>
         </form>
     </div>
+    <!-- <dialog id="edit-dialog">
+        <form id="save-edited-form" action="" method="post">
+            <input type="text" name="edit_food_name" placeholder="Food Name">
+            <input type="text" name="edit_food_name" placeholder="Food Name">
+            <input type="number" step="0.01" name="edit_food_price" placeholder="Price">
+            <input type="text" name="edit_food_description" placeholder="Description">
+            <input type="file" name="edit_food_image">
+            <select name="edit_food_category">
+                <option value="meals" selected>Meal</option>
+                <option value="snacks">Snack</option>
+                <option value="beverages">Beverage</option>
+                <option value="sweets">Sweet</option>
+            </select>
+            <button type="submit" name="save_edited_food" id="save-edited-btn">Edited Food Item</button>
+        </form>
+    </dialog> -->
     <div>
         <section id="meals">
-                <h2>Meals:</h2>
-                <?php
-                foreach ($meal_array as $meal_data) {
-                    echo "
-                    <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
-                        <img src='./Image/{$meal_data['image']}' alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
-                        <h2>{$meal_data['name']}</h2>
-                        <p class='order-count' id='order-count-{$meal_data['name']}'></p>
-                        <h3>Price: {$meal_data['price']} php</h3>
-                    </div>
-                    <form method='post'>
-                        <input type='hidden' name='meals_id' value='{$meal_data['id']}' />
-                        <button type='submit' name='delete_food' id='delete_food'>Delete</button>
-                    </form>";
-                }
-                if (isset($_POST['delete_food']) && isset($_POST['meals_id'])) {
+            <h2>Meals:</h2>
+            <?php
+            foreach ($meal_array as $meal_data) {
+                echo "
+                <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
+                    <img src='./Image/{$meal_data['image']}' alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
+                    <h2>{$meal_data['name']}</h2>
+                    <p class='order-count' id='order-count-{$meal_data['name']}'></p>
+                    <h3>Price: {$meal_data['price']} php</h3>
+                </div>
+                <form method='post'>
+                    <input type='hidden' name='meals_id' value='{$meal_data['id']}' />
+                    <button type='submit' name='delete_food' id='delete_food'>Delete</button>
+                    <button type='button' class='edit-btn'>Edit</button>
+                </form>
+                <dialog id='edit-dialog'>
+                    <form id='save-edited-form' action='' method='post'>
+                        <input type='text' name='edit_food_id' placeholder='Food Id' value='{$meal_data['id']}'>
+                        <input type='text' name='edit_food_name' placeholder='Food Name' value='{$meal_data['name']}'>
+                        <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$meal_data['price']}'>
+                        <textarea name='edit_food_description' placeholder='Description' cols='30' rows='10'>{$meal_data['description']}</textarea>
+                        <input type='file' name='edit_food_image'>
+                        <select name='edit_food_category'>
+                            <option value='meals' selected>Meal</option>
+                            <option value='snacks'>Snack</option>
+                            <option value='beverages'>Beverage</option>
+                            <option value='sweets'>Sweet</option>
+                        </select>
+                        <button type='submit' name='save_edited_food' id='save-edited-btn'>Edited Food Item</button>
+                    </form>
+                </dialog>";
+            }
+            if (isset($_POST['delete_food']) && isset($_POST['meals_id'])) {
                     $meal_id = $_POST['meals_id'];
                     $dataFile = './Data/data.xml';
                     $xml = simplexml_load_file($dataFile) or die("Error: Cannot create object");
@@ -128,9 +213,9 @@ if (isset($_POST['save_food'])) {
                     }
                     $xml->asXML($dataFile); // Corrected variable name from $foodXML to $dataFile
                 }
-                ?>
-            </section>
-            <section id="snacks">
+            ?>
+        </section>
+        <section id="snacks">
                 <h2>Snacks:</h2>
                 <?php
                 foreach ($snacks_array as $snack_data) {
@@ -144,6 +229,7 @@ if (isset($_POST['save_food'])) {
                     <form method='post'>
                         <input type='hidden' name='snacks_id' value='{$snack_data['id']}' />
                         <button type='submit' name='delete_food' id='delete_food'>Delete</button>
+                        <button type='button' class='edit-btn'>Edit</button>
                     </form>";
                 }
                 if (isset($_POST['delete_food']) && isset($_POST['snacks_id'])) {
@@ -177,6 +263,7 @@ if (isset($_POST['save_food'])) {
                     <form method='post'>
                         <input type='hidden' name='beverages_id' value='{$beverage_data['id']}' />
                         <button type='submit' name='delete_food' id='delete_food'>Delete</button>
+                        <button type='button' class='edit-btn'>Edit</button>
                     </form>";
                 }
                 if (isset($_POST['delete_food']) && isset($_POST['beverages_id'])) {
@@ -210,6 +297,7 @@ if (isset($_POST['save_food'])) {
                     <form method='post'>
                         <input type='hidden' name='sweets_id' value='{$sweet_data['id']}' />
                         <button type='submit' name='delete_food' id='delete_food'>Delete</button>
+                        <button type='button' class='edit-btn'>Edit</button>
                     </form>";
                 }
                 if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
@@ -230,5 +318,13 @@ if (isset($_POST['save_food'])) {
                 ?>
         </section>
     </div>
+    <script>
+        let editBtns = document.querySelectorAll('.edit-btn');
+        editBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelector('#edit-dialog').showModal();
+            });
+        });
+    </script>
 </body>
 </html>
