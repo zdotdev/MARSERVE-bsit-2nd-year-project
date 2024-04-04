@@ -112,9 +112,9 @@ function disableSaveOrderBtn () {
     document.getElementById('total-bill').textContent
   )
   if (totalBill === 0) {
-    saveOrderBtn.disabled = true
+    saveOrderBtn.style.display = 'none'
   } else {
-    saveOrderBtn.disabled = false
+    saveOrderBtn.style.display = 'block'
   }
 }
 
