@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    content: none;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+:root{
+    /* Primary */
+    --primary-900: hsl(346, 97%, 46%);
+    --primary-800: hsl(346, 97%, 41%);
+    --primary-700: hsl(346, 97%, 36%);
+    --primary-600: hsl(346, 97%, 31%);
+    --primary-500: hsl(346, 97%, 26%);
+    --primary-400: hsl(346, 97%, 21%);
+    --primary-300: hsl(346, 97%, 16%);
+    --primary-200: hsl(346, 97%, 11%);
+    --primary-100: hsl(346, 97%, 6%);
+    /* Secondary */
+    --secondary-900: hsl(344, 87%, 41%);
+    --secondary-800: hsl(344, 87%, 36%);
+    --secondary-700: hsl(344, 87%, 31%);
+    --secondary-600: hsl(344, 87%, 26%);
+    --secondary-500: hsl(344, 87%, 21%);
+    --secondary-400: hsl(344, 87%, 16%);
+    --secondary-300: hsl(344, 87%, 11%);
+    --secondary-200: hsl(344, 87%, 6%);
+    --secondary-100: hsl(344, 87%, 1%);
+
+
+    /* Neutral */
+    --neutral-white-500: hsl(0, 0%, 95%);
+    --neutral-black-500: hsl(0, 0%, 5%);
+}
+
+/* start */
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background-color: var(--primary-500);
+    box-shadow: 1rem 1rem 1rem var(--primary-100);
+}
+header h1{
+    color: var(--neutral-white-500);
+    font-size: 2rem;
+    font-weight: 700;
+}
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    height: 100vh;
+    background-color: var(--neutral-white-500);
+}
+a{
+    width: auto;
+    height: 2rem;
+    background-color: var(--secondary-900);
+    padding: 1.8rem;
+    color: var(--neutral-white-500);
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.8rem;
+    box-shadow: .2rem .2rem .2rem var(--primary-100);
+    border: 4px solid var(--secondary-500);
+    text-decoration: none;
+    transition: transform 0.5s ease-in-out;
+}
+a:hover {
+  transform: translateY(-1rem);
+}
