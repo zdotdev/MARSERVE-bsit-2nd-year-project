@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <foods>
     <meals>
-        <pizza>
-            <id>meal-0</id>
-            <name>Pizza</name>
-            <price>9.99</price>
-            <description>Delicious pizza with a variety of toppings.</description>
-            <image>pizza.jpg</image>
-        </pizza>
-        <burger>
-            <id>meal-1</id>
-            <name>Burger</name>
-            <price>4.99</price>
-            <description>Classic burger with juicy patty and fresh toppings.</description>
-            <image>burger.jpg</image>
-        </burger>
+        
+        
         <pasta>
             <id>meal-2</id>
             <name>Pasta</name>
             <price>7.99</price>
-            <description>Classic spaghetti with rich tomato sauce and savory meatballs.</description>
+            <description>Chupaghetti</description>
             <image>pasta.jpg</image>
         </pasta>
         <sushi>
@@ -36,44 +24,14 @@
             <description>Healthy salad made with fresh vegetables and a variety of dressings.</description>
             <image>salad.jpg</image>
         </salad>
-        <sandwich>
-            <id>meal-5</id>
-            <name>Sandwich</name>
-            <price>5.99</price>
-            <description>Classic sandwich with a variety of fillings.</description>
-            <image>sandwich.jpg</image>
-        </sandwich>
+        
     </meals>
     <snacks>
-        <chips>
-            <id>snack-0</id>
-            <name>Chips</name>
-            <price>2.99</price>
-            <description>Crunchy and flavorful chips in various flavors.</description>
-            <image>chips.jpg</image>
-        </chips>
-        <cookies>
-            <id>snack-1</id>
-            <name>Cookies</name>
-            <price>3.99</price>
-            <description>Delicious cookies in different flavors and textures.</description>
-            <image>cookies.jpg</image>
-        </cookies>
-        <popcorn>
-            <id>snack-3</id>
-            <name>Popcorn</name>
-            <price>4.99</price>
-            <description>Classic movie theater popcorn for a tasty snack.</description>
-            <image>popcorn.jpg</image>
-        </popcorn>
-        <nuts>
-            <id>snack-4</id>
-            <name>Nuts</name>
-            <price>5.99</price>
-            <description>Assorted nuts for a healthy and satisfying snack.</description>
-            <image>pizza.jpg</image>
-        </nuts>
-    </snacks>
+        
+        
+        
+        
+    <Nutsy><name>Nuts</name><price>5.99</price><description>Assorted nuts for a healthy and satisfying snack.</description><id>snack-4</id><image>burger.jpg</image></Nutsy></snacks>
     <beverages>
         <soda>
             <id>beverage-0</id>
@@ -96,13 +54,7 @@
             <description>Pure and refreshing water for hydration.</description>
             <image>pizza.jpg</image>
         </water>
-        <energyDrink>
-            <id>beverage-3</id>
-            <name>Energy Drink</name>
-            <price>3.99</price>
-            <description>Highly caffeinated beverage for an energy boost.</description>
-            <image>pizza.jpg</image>
-        </energyDrink>
+        
         <icedTea>
             <id>beverage-4</id>
             <name>Iced Tea</name>
@@ -110,49 +62,13 @@
             <description>Cool and refreshing tea with ice.</description>
             <image>pizza.jpg</image>
         </icedTea>
-        <coffee>
-            <id>beverage-5</id>
-            <name>Coffee</name>
-            <price>2.99</price>
-            <description>Hot or iced coffee made from freshly brewed beans.</description>
-            <image>pizza.jpg</image>
-        </coffee>
+        
     </beverages>
     <sweets>
-        <cake>
-            <id>sweet-0</id>
-            <name>Cake</name>
-            <price>6.99</price>
-            <description>Delicious cake with various flavors and frostings.</description>
-            <image>pizza.jpg</image>
-        </cake>
-        <cookies>
-            <id>sweet-1</id>
-            <name>Cookies</name>
-            <price>3.99</price>
-            <description>Homemade cookies in different flavors and textures.</description>
-            <image>pizza.jpg</image>
-        </cookies>
-        <chocolate>
-            <id>sweet-2</id>
-            <name>Chocolate</name>
-            <price>4.99</price>
-            <description>Indulgent chocolate treats in a variety of forms.</description>
-            <image>pizza.jpg</image>
-        </chocolate>
-        <candy>
-            <id>sweet-3</id>
-            <name>Candy</name>
-            <price>2.49</price>
-            <description>Assorted candies for a sweet and satisfying treat.</description>
-            <image>pizza.jpg</image>
-        </candy>
-        <iceCream>
-            <id>sweet-4</id>
-            <name>Ice Cream</name>
-            <price>5.99</price>
-            <description>Rich and creamy ice cream in a variety of flavors.</description>
-            <image>pizza.jpg</image>
-        </iceCream>
-    </sweets>
+        
+        
+        
+        
+        
+    <Candy><name>Candice</name><price>21</price><description>Masarap</description><id>vplnx</id><image>salad.jpg</image></Candy></sweets>
 </foods>
