@@ -50,7 +50,7 @@ header{
 }
 header h1{
     color: var(--neutral-white-500);
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 #main{
