@@ -14,6 +14,7 @@
 
 :root {
   /* Primary */
+  --primary-950: hsl(346, 97%, 76%);
   --primary-900: hsl(346, 97%, 46%);
   --primary-800: hsl(346, 97%, 41%);
   --primary-700: hsl(346, 97%, 36%);
@@ -91,7 +92,7 @@ body{
 .sidebar-title{
     display: flex;
     justify-content: center;
-    color: var(--secondary-500);
+    color: var(--secondary-700);
     font-weight: 700;
     font-size: 1.8rem;
     padding-bottom: 2rem;
@@ -167,7 +168,50 @@ body{
 }
 .sub-container{
     width: 80%;
-    padding: 4rem;
+    padding: 2rem 4rem 4rem 4rem;
     display: flex;
     flex-direction: column;
+}
+
+/* meals */
+.f-title{
+    font-size: 2.8rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+    color: var(--secondary-500);
+}
+.f-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    height: 100vh;
+}
+#card-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-white-400);
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px solid var(--neutral-white-300);
+    box-shadow: .5rem .5rem 1rem var(--primary-300);
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+#card-container:hover{
+    transform: translateY(-1rem);
+}
+.food-image{
+    width: 20rem;
+    height: 12rem;
+    border-radius: 1.6rem;
+}
+.food-title{
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: .4rem 0rem .6rem 0rem;
+}
+.food-price{
+    font-size: 1.4rem;
 }

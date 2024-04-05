@@ -97,60 +97,68 @@
             <div id="container">
                 <div class="sub-container">
                     <section id="meals">
-                        <h2>Meals:</h2>
-                        <?php
-                            foreach ($meal_array as $meal_data) {
-                                echo "
-                                <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
-                                    <img src='./Image/{$meal_data['image']}' alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
-                                    <h2>{$meal_data['name']}</h2>
-                                    <p class='order-count' id='order-count-{$meal_data['name']}'></p>
-                                    <h3>Price: {$meal_data['price']} php</h3>
-                                </div>";
-                            }
-                        ?>
+                        <h2 class="f-title">Meals:</h2>
+                        <div class="f-container">
+                            <?php
+                                foreach ($meal_array as $meal_data) {
+                                    echo "
+                                    <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
+                                        <img src='./Image/{$meal_data['image']}' alt='{$meal_data['id']}' class='food-image'>
+                                        <h2 class='food-title'>{$meal_data['name']}</h2>
+                                        <p class='order-count' id='order-count-{$meal_data['name']}'></p>
+                                        <h3 class='food-price'>Price: {$meal_data['price']} php</h3>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
                     </section>
                     <section id="snacks">
-                        <h2>Snacks:</h2>
-                        <?php
-                            foreach ($snacks_array as $snack_data) {
-                                echo "
-                                <div id='card-container' data-description='{$snack_data['description']}' data-price='{$snack_data['price']}' data-name='{$snack_data['name']}'>
-                                    <img src='./Image/{$snack_data['image']}' alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
-                                    <h2>{$snack_data['name']}</h2>
-                                    <p class='order-count' id='order-count-{$snack_data['name']}'></p>
-                                    <h3>Price: {$snack_data['price']} php</h3>
-                                </div>";
-                            }
-                        ?>
+                        <h2 class="f-title">Snacks:</h2>
+                        <div class="f-container">
+                            <?php
+                                foreach ($snacks_array as $snack_data) {
+                                    echo "
+                                    <div id='card-container' data-description='{$snack_data['description']}' data-price='{$snack_data['price']}' data-name='{$snack_data['name']}'>
+                                        <img src='./Image/{$snack_data['image']}' alt='{$meal_data['id']}' class='food-image'>
+                                        <h2 class='food-title'>{$snack_data['name']}</h2>
+                                        <p class='order-count' id='order-count-{$snack_data['name']}'></p>
+                                        <h3 class='food-price'>Price: {$snack_data['price']} php</h3>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
                     </section>
                     <section id="beverages">
-                        <h2>Beverages:</h2>
-                        <?php
-                            foreach ($beverages_array as $beverage_data) {
-                                echo "
-                                <div id='card-container' data-description='{$beverage_data['description']}' data-price='{$beverage_data['price']}' data-name='{$beverage_data['name']}'>
-                                    <img src='./Image/{$beverage_data['image']}' alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
-                                    <h2>{$beverage_data['name']}</h2>
-                                    <p class='order-count' id='order-count-{$beverage_data['name']}'></p>
-                                    <h3>Price: {$beverage_data['price']} php</h3>
-                                </div>";
-                            }
-                        ?>
+                        <h2 class="f-title">Beverages:</h2>
+                        <div class="f-container">
+                            <?php
+                                foreach ($beverages_array as $beverage_data) {
+                                    echo "
+                                    <div id='card-container' data-description='{$beverage_data['description']}' data-price='{$beverage_data['price']}' data-name='{$beverage_data['name']}'>
+                                        <img src='./Image/{$beverage_data['image']}' alt='{$meal_data['id']}' class='food-image'>
+                                        <h2 class='food-title'>{$beverage_data['name']}</h2>
+                                        <p class='order-count' id='order-count-{$beverage_data['name']}'></p>
+                                        <h3 class='food-price'>Price: {$beverage_data['price']} php</h3>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
                     </section>
                     <section id="sweets">
-                        <h2>Sweets:</h2>
-                        <?php
-                            foreach ($sweets_array as $sweet_data) {
-                                echo "
-                                <div id='card-container' data-description='{$sweet_data['description']}' data-price='{$sweet_data['price']}' data-name='{$sweet_data['name']}'>
-                                    <img src='./Image/{$sweet_data['image']}' alt='{$meal_data['id']}' style='width: 10rem; height: 10rem;'>
-                                    <h2>{$sweet_data['name']}</h2>
-                                    <p class='order-count' id='order-count-{$sweet_data['name']}'></p>
-                                    <h3>Price: {$sweet_data['price']} php</h3>
-                                </div>";
-                            }
-                        ?>
+                        <h2 class="f-title">Sweets:</h2>
+                        <div class="f-container">
+                            <?php
+                                foreach ($sweets_array as $sweet_data) {
+                                    echo "
+                                    <div id='card-container' data-description='{$sweet_data['description']}' data-price='{$sweet_data['price']}' data-name='{$sweet_data['name']}'>
+                                        <img src='./Image/{$sweet_data['image']}' alt='{$meal_data['id']}' class='food-image'>
+                                        <h2 class='food-title'>{$sweet_data['name']}</h2>
+                                        <p class='order-count' id='order-count-{$sweet_data['name']}'></p>
+                                        <h3 class='food-price'>Price: {$sweet_data['price']} php</h3>
+                                    </div>";
+                                }
+                            ?>
+                        </div>
                     </section>
                 </div>
             </div>
