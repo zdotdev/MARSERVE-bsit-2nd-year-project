@@ -102,7 +102,7 @@
                             <?php
                                 foreach ($meal_array as $meal_data) {
                                     echo "
-                                    <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}'>
+                                    <div id='card-container' data-description='{$meal_data['description']}' data-price='{$meal_data['price']}' data-name='{$meal_data['name']}' data-image='{$meal_data['image']}'>
                                         <img src='./Image/{$meal_data['image']}' alt='{$meal_data['id']}' class='food-image'>
                                         <h2 class='food-title'>{$meal_data['name']}</h2>
                                         <p class='order-count' id='order-count-{$meal_data['name']}'></p>
@@ -118,7 +118,7 @@
                             <?php
                                 foreach ($snacks_array as $snack_data) {
                                     echo "
-                                    <div id='card-container' data-description='{$snack_data['description']}' data-price='{$snack_data['price']}' data-name='{$snack_data['name']}'>
+                                    <div id='card-container' data-description='{$snack_data['description']}' data-price='{$snack_data['price']}' data-name='{$snack_data['name']}' data-image='{$snack_data['image']}'>
                                         <img src='./Image/{$snack_data['image']}' alt='{$meal_data['id']}' class='food-image'>
                                         <h2 class='food-title'>{$snack_data['name']}</h2>
                                         <p class='order-count' id='order-count-{$snack_data['name']}'></p>
@@ -134,7 +134,7 @@
                             <?php
                                 foreach ($beverages_array as $beverage_data) {
                                     echo "
-                                    <div id='card-container' data-description='{$beverage_data['description']}' data-price='{$beverage_data['price']}' data-name='{$beverage_data['name']}'>
+                                    <div id='card-container' data-description='{$beverage_data['description']}' data-price='{$beverage_data['price']}' data-name='{$beverage_data['name']}' data-image='{$beverage_data['image']}'>
                                         <img src='./Image/{$beverage_data['image']}' alt='{$meal_data['id']}' class='food-image'>
                                         <h2 class='food-title'>{$beverage_data['name']}</h2>
                                         <p class='order-count' id='order-count-{$beverage_data['name']}'></p>
@@ -150,7 +150,7 @@
                             <?php
                                 foreach ($sweets_array as $sweet_data) {
                                     echo "
-                                    <div id='card-container' data-description='{$sweet_data['description']}' data-price='{$sweet_data['price']}' data-name='{$sweet_data['name']}'>
+                                    <div id='card-container' data-description='{$sweet_data['description']}' data-price='{$sweet_data['price']}' data-name='{$sweet_data['name']}' data-image='{$sweet_data['image']}'>
                                         <img src='./Image/{$sweet_data['image']}' alt='{$meal_data['id']}' class='food-image'>
                                         <h2 class='food-title'>{$sweet_data['name']}</h2>
                                         <p class='order-count' id='order-count-{$sweet_data['name']}'></p>
@@ -164,15 +164,20 @@
             </div>
         </main>
         <dialog id="dialog">
-            <h3 id="dialog-food-name"></h3>
-            <p>Price: <span id="dialog-food-price"></span></p>
-            <p id="dialog-food-description"></p>
-            <div>
-                <button id="decrement">-</button>
-                <p>Order Count: <span id="order-count"></span></p>
-                <button id="increment">+</button>
+            <div class="dialog-div">
+                <img id="dialog-food-image" alt="food_image">
+                <h3 id="dialog-food-name"></h3>
+                <p class="df-price">Price: <span id="dialog-food-price"></span></p>
+                <p id="dialog-food-description"></p>
+                <div class="dialog-incredecre">
+                    <button id="decrement">-</button>
+                    <p>Order Count: <span id="order-count"></span></p>
+                    <button id="increment">+</button>
+                </div>
             </div>
-            <button id="close-button">Close</button>
+            <span class="dialog-food-span">
+                <button id="close-button">Close</button>
+            </span>
         </dialog>
     </body>
 </html>

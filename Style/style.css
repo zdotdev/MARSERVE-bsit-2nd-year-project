@@ -168,7 +168,6 @@ body{
 }
 .sub-container{
     width: 80%;
-    padding: 2rem 4rem 4rem 4rem;
     display: flex;
     flex-direction: column;
 }
@@ -177,25 +176,27 @@ body{
 .f-title{
     font-size: 2.8rem;
     font-weight: 700;
-    padding-bottom: 2rem;
-    color: var(--secondary-500);
+    padding: 2rem;
+    color: var(--neutral-white-500);
+    text-shadow: 1rem 1rem 1rem var(--neutral-black-500);
 }
 .f-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 4rem;
-    height: 100vh;
+    height: fit-content;
+    padding-bottom: 8rem;
 }
 #card-container{
     display: flex;
     flex-direction: column;
-    background-color: var(--neutral-white-400);
+    background-color: var(--neutral-white-500);
     height: fit-content;
     padding: 2rem;
     border-radius: 2rem;
     border: 2px solid var(--neutral-white-300);
-    box-shadow: .5rem .5rem 1rem var(--primary-300);
+    box-shadow: 1rem 1rem 1rem var(--neutral-black-500);
     transition: transform 0.5s ease-in-out;
     cursor: pointer;
 }
@@ -214,4 +215,121 @@ body{
 }
 .food-price{
     font-size: 1.4rem;
+}
+#meals{
+    height: fit-content;
+    background-image: url(../Image/mealBG.png);
+    background-position: center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#snacks {
+  background-image: url(../Image/snackBG.png);
+  background-position: center;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#beverages {
+  background-image: url(../Image/drinksBG.png);
+  background-position: center;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#sweets {
+  background-image: url(../Image/sweetBG.png);
+  background-position: center;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* dialog */
+#dialog{
+    max-width: none;
+    max-height: none;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1.2rem solid var(--primary-500);
+    background-color: var(--neutral-white-500);
+}
+.dialog-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#dialog-food-image{
+    width: 42rem;
+    height: 24rem;
+    border-radius: 1.6rem;
+    box-shadow: 0rem 0rem 1rem var(--secondary-500);
+}
+#dialog-food-name{
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 0.4rem 0rem 0.6rem 0rem;
+}
+.df-price{
+    font-size: 1.4rem;
+}
+#dialog-food-description{
+    width: 42rem;
+    height: fit-content;
+    font-size: 1rem;
+    padding: 1rem 0rem;
+    text-align: center;
+}
+.dialog-incredecre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0rem;
+}
+#order-count{
+    font-weight: 700;
+}
+#decrement,
+#increment{
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 1.8rem;
+    border: none;
+    background-color: var(--secondary-900);
+    color: var(--neutral-white-500);
+    box-shadow: 0.1rem 0.1rem 0.4rem var(--neutral-black-500);
+    transition: .5s;
+}
+#decrement:hover,
+#increment:hover{
+    background-color: var(--secondary-600);
+}
+.dialog-food-span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#close-button{
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 1.8rem;
+    border: none;
+    background-color: var(--primary-600);
+    color: var(--neutral-white-500);
+    box-shadow: 0.1rem 0.1rem 0.4rem var(--neutral-black-500);
+    transition: transform 0.5s ease-in-out;
+}
+#close-button:hover{
+    transform: scale(1.1);
+}
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.order-count{
+    display: none;
 }

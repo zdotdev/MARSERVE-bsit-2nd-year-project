@@ -19,6 +19,9 @@ document.querySelector('main').addEventListener('click', function (event) {
       target.dataset.name
     document.getElementById('dialog-food-price').textContent =
       target.dataset.price
+    document.getElementById(
+      'dialog-food-image'
+    ).src = `./Image/${target.dataset.image}`
     let foodName = target.dataset.name
     document.getElementById('order-count').textContent =
       orderCounts[foodName] || 0
