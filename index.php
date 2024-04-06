@@ -50,7 +50,7 @@
         $order->addChild('table_number', $table);
         $order->addChild('order_id', $random_letters);
         $ordersXml->asXML($ordersFile);
-        header("Location: http://localhost/orderSystem/landing.php?orderId=$random_letters");
+        header("Location: http://localhost/orderSystem/landing.php?table={$table}&orderId=$random_letters");
         exit();
     }
 ?>

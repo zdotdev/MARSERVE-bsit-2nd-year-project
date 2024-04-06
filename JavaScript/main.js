@@ -115,7 +115,8 @@ if (currentUrl.indexOf('orderId') !== -1) {
 document.getElementById('show-orders').addEventListener('click', function () {
   let currentUrl = window.location.href // Get the current URL again
   let url = new URL(currentUrl)
-  let oi = url.searchParams.get('orderId') // Get the current orderId
-  window.location.href = `http://localhost/orderSystem/landing.php?orderId=${oi}`
+  let oi = url.searchParams.get('orderId')
+  let table = url.searchParams.get('table')
+  window.location.href = `http://localhost/orderSystem/landing.php?table=${table}&orderId=${oi}`
   console.log(oi)
 })

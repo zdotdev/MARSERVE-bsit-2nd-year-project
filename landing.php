@@ -9,11 +9,12 @@ if (file_exists($dataFile)) {
 }
 
 // $orderId = "nfhir"; // The order_id you want to search for
+$table = $_GET['table'] ?? '';
 $orderId = $_GET['orderId'] ?? '';
 $foundOrder = null;
 
 foreach ($orders->order as $order) {
-    if ((string) $order->order_id === $orderId) {
+    if ((string) $order->table_number === $table) {
         $foundOrder = $order;
         break;
     }
@@ -31,18 +32,23 @@ foreach ($orders->order as $order) {
         <main>
             <?php
                 if ($foundOrder !== null) {
-                    echo "
-                        <h1>Order Details</h1>
-                        <div>
-                            <p>Total Orders: {$foundOrder->total_orders}</p>
-                            <p>Total Bill: {$foundOrder->total_bill}</p>
-                            <p>Table Number: {$foundOrder->table_number}</p>
-                            <a href='http://localhost/orderSystem/index.php?table={$foundOrder->table_number}&orderId={$orderId}'>Buy again?</a>
-                        </div>
-                    ";
+                    echo "<h1>Order Details</h1>";
+                    foreach ($orders->order as $order) {
+                        if ((string) $order->table_number === $table) {
+                            echo "
+                                <div>
+                                    <p>Total Orders: {$order->total_orders}</p>
+                                    <p>Total Bill: {$order->total_bill}</p>
+                                </div>
+                            ";
+                        }
+                    }
                 } else {
                     echo "Order not found.";
                 }
+                echo "
+                <a href='http://localhost/orderSystem/index.php?table={$order->table_number}&orderId={$orderId}'>Buy again?</a>
+                <p>{$table}</p>";
             ?>
         </main>
     </body>
