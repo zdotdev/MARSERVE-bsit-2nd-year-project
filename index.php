@@ -69,7 +69,7 @@
     <body>
         <nav class="header-container">
             <a href="#" class="header-logo">Yow MSC!</a>
-            <h1 class="header-title">MSC Canteen Ordering System</h1>
+            <h1 class="header-title">MARSERVE</h1>
             <a href="#footer" class="header-contact">Contact us?</a>
         </nav>
         <main>
