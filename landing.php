@@ -48,7 +48,7 @@ foreach ($orders->order as $order) {
                 }
                 echo "
                 <a href='http://localhost/orderSystem/index.php?table={$order->table_number}&orderId={$orderId}'>Buy again?</a>
-                <p>{$table}</p>";
+                <p>Table Number{$table}</p>";
             ?>
         </main>
     </body>

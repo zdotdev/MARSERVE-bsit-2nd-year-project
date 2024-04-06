@@ -119,3 +119,17 @@ document.getElementById('show-orders').addEventListener('click', function () {
   window.location.href = `http://localhost/orderSystem/landing.php?table=${table}&orderId=${oi}`
   console.log(oi)
 })
+let arr = []
+document.querySelectorAll('.food-title').forEach(element => {
+  arr.push(element.textContent)
+})
+document.querySelector('.search-button').addEventListener('click', function () {
+  let search = document.getElementById('search-input').value
+  let toLow = search.toLowerCase()
+  let upperFirstLetter = toLow.charAt(0).toUpperCase() + toLow.slice(1)
+  if (search !== '') {
+    document.querySelector('.search-button').href = `#${
+      arr[arr.indexOf(upperFirstLetter)]
+    }`
+  }
+})

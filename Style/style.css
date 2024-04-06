@@ -77,6 +77,7 @@ body{
   color: #FFDB58;
     text-shadow: 0.07rem 0.07rem 0rem var(--neutral-black-500);
 }
+.search-button,
 .header-logo,
 .header-contact {
   color: #FFDB58;
@@ -88,6 +89,19 @@ body{
 .header-logo:hover,
 .header-contact:hover {
   color: var(--neutral-white-500);
+}
+.search-div{
+    display: flex;
+    gap: 1rem;
+}
+#search-input{
+    border-radius: 1.4rem;
+    padding: 0rem .8rem;
+    outline: none;
+    border: none;
+}
+#search-input{
+    outline: none;
 }
 
 /* sidebar */
@@ -333,4 +347,10 @@ dialog::backdrop{
 }
 .order-count{
     display: none;
+}
+#beverages,
+#snacks,
+#meals{
+    border-bottom: .5rem solid;
+    border-image: linear-gradient(90deg,#FFDB58,var(--primary-500),#FFDB58)1;
 }
