@@ -91,6 +91,7 @@
                         <input type="hidden" name="total_orders" id="total-orders-input">
                         <input type="hidden" name="total_bill" id="total-bill-input">
                         <button type="submit" name="save_order" id="save-order-btn">Place Order</button>
+                        <button type="button" id="show-orders">Show Orders</button>
                     </form>
                 </div>
             </div>

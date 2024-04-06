@@ -37,7 +37,7 @@ foreach ($orders->order as $order) {
                             <p>Total Orders: {$foundOrder->total_orders}</p>
                             <p>Total Bill: {$foundOrder->total_bill}</p>
                             <p>Table Number: {$foundOrder->table_number}</p>
-                            <a href='http://localhost/orderSystem/index.php?table={$foundOrder->table_number}'>Buy again?</a>
+                            <a href='http://localhost/orderSystem/index.php?table={$foundOrder->table_number}&orderId={$orderId}'>Buy again?</a>
                         </div>
                     ";
                 } else {

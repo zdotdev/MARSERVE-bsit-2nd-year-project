@@ -161,6 +161,7 @@ body{
 #total-orders{
     font-weight: 600;
 }
+#show-orders,
 #save-order-btn{
     font-size: 1.1rem;
     padding: .6rem 1rem;
@@ -172,11 +173,13 @@ body{
     box-shadow: .1rem .1rem .4rem var(--neutral-black-500);
     transition: transform 0.5s ease-in-out;
 }
+#show-orders:hover,
 #save-order-btn:hover{
     transform: scale(1.1);
 }
 #save-order-form{
     display: flex;
+    gap: 1rem;
     justify-content: center;
 }
 

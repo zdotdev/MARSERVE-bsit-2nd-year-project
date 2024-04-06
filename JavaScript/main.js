@@ -103,3 +103,19 @@ disableSaveOrderBtn()
 document
   .getElementById('total-bill')
   .addEventListener('DOMSubtreeModified', disableSaveOrderBtn)
+
+let currentUrl = window.location.href
+
+if (currentUrl.indexOf('orderId') !== -1) {
+  document.getElementById('show-orders').style.display = 'block'
+} else {
+  document.getElementById('show-orders').style.display = 'none'
+}
+
+document.getElementById('show-orders').addEventListener('click', function () {
+  let currentUrl = window.location.href // Get the current URL again
+  let url = new URL(currentUrl)
+  let oi = url.searchParams.get('orderId') // Get the current orderId
+  window.location.href = `http://localhost/orderSystem/landing.php?orderId=${oi}`
+  console.log(oi)
+})
