@@ -111,9 +111,8 @@ if (currentUrl.indexOf('orderId') !== -1) {
 } else {
   document.getElementById('show-orders').style.display = 'none'
 }
-
 document.getElementById('show-orders').addEventListener('click', function () {
-  let currentUrl = window.location.href // Get the current URL again
+  let currentUrl = window.location.href
   let url = new URL(currentUrl)
   let oi = url.searchParams.get('orderId')
   let table = url.searchParams.get('table')
