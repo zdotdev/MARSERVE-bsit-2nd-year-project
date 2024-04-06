@@ -78,8 +78,7 @@ body{
     text-shadow: 0.07rem 0.07rem 0rem var(--neutral-black-500);
 }
 .search-button,
-.header-logo,
-.header-contact {
+.header-logo {
   color: #FFDB58;
   font-weight: 700;
   cursor: pointer;
@@ -353,4 +352,17 @@ dialog::backdrop{
 #meals{
     border-bottom: .5rem solid;
     border-image: linear-gradient(90deg,#FFDB58,var(--primary-500),#FFDB58)1;
+}
+.contact-us{
+    position: fixed;
+    z-index: 10;
+    bottom: 2rem;
+    right: 2rem;
+    text-decoration: none;
+    color: var(--neutral-white-500);
+    background-color: var(--neutral-white-300);
+    padding: .8rem;
+    border-radius: 50%;
+    border: 2px solid var(--neutral-white-200);
+    opacity: .5;
 }
