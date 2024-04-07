@@ -39,24 +39,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Style/cashier.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Cashier</title>
 </head>
 <body>
+    <header>
+        <h1>MARSERVE</h1>
+    </header>
     <div id="container">
-        <?php
-        foreach ($orders_array as $order_data) {
-            echo "
-            <div id='card-container'>
-                <h2>{$order_data['total_orders']}</h2>
-                <p>{$order_data['total_bill']}</p>
-                <p>Table number: {$order_data['table_number']}</p>
-                <form method='post'>
-                    <input type='hidden' name='order_id' value='{$order_data['order_id']}' />
-                    <button type='submit' name='delete_order'>Delete</button>
-                </form>
-            </div>";
-        }
-        ?>
+        <a href="http://localhost/orderSystem/admin.php" class="material-symbols-outlined arrow">arrow_back</a>
+        <div class="h">
+            <h2>Orders:</h2>
+            <?php
+            foreach ($orders_array as $order_data) {
+                echo "
+                <div id='card-container'>
+                    <p class='table-number'>Table {$order_data['table_number']}</p>
+                    <p class='table-orders'>Orders: {$order_data['total_orders']}</p>
+                    <p class='table-bill'>Bill: {$order_data['total_bill']} php</p>
+                    <form method='post'>
+                        <input type='hidden' name='order_id' value='{$order_data['order_id']}' />
+                        <button type='submit' name='delete_order'>Delete</button>
+                    </form>
+                </div>";
+            }
+            ?>
+        </div>
     </div>
     <script>
         let lastData = '';

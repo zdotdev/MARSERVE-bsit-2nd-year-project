@@ -57,10 +57,10 @@
         
         <icedTea>
             <id>beverage-4</id>
-            <name>Iced Tea</name>
+            <name>Iced</name>
             <price>1.99</price>
             <description>Cool and refreshing tea with ice.</description>
-            <image>pizza.jpg</image>
+            <image>popcorn.jpg</image>
         </icedTea>
         
     </beverages>
@@ -70,5 +70,5 @@
         
         
         
-    <Candy><name>Candice</name><price>21</price><description>Masarap</description><id>vplnx</id><image>salad.jpg</image></Candy></sweets>
+    </sweets>
 </foods>

@@ -23,6 +23,7 @@
     --primary-200: hsl(346, 97%, 11%);
     --primary-100: hsl(346, 97%, 6%);
     /* Secondary */
+    --secondary: hsl(47, 100%, 67%);
     --secondary-900: hsl(344, 87%, 41%);
     --secondary-800: hsl(344, 87%, 36%);
     --secondary-700: hsl(344, 87%, 31%);
@@ -40,19 +41,26 @@
 }
 
 /* start */
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .8rem;
-    background-color: var(--primary-500);
-    box-shadow: 1rem 1rem 1rem var(--primary-100);
+body {
+  background-color: var(--secondary);
 }
-header h1{
-    color: var(--neutral-white-500);
-    font-size: 1.4rem;
-    font-weight: 700;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: hsl(344, 87%, 11%);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secondary);
+  text-shadow: 0.07rem 0.07rem 0rem var(--neutral-black-500);
+}
+
 #main{
     display: flex;
     justify-content: center;
