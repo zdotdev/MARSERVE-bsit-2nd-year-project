@@ -1,12 +1,11 @@
 <?php
     $data = './Data/orders.xml';
     $xml = simplexml_load_file($data) or die("Error: Cannot create object");
-    
     if ($xml === false) {
         die("Error: Cannot load XML file.");
     }
     $orders_array = [];
-    if (isset($xml->order)) { // Check if the 'orders' element exists
+    if (isset($xml->order)) {
         foreach($xml->order as $order) {
             $order_data = [];
             foreach($order->children() as $key => $value) {
@@ -60,30 +59,23 @@
         ?>
     </div>
     <script>
-        let lastData = ''; // Variable to store the last fetched data
-
-        // Function to fetch the XML file and check for changes
+        let lastData = '';
         function checkForChanges() {
             fetch('./Data/orders.xml')
                 .then(response => response.text())
                 .then(data => {
-                    // Compare the data with the previous data
                     if (data !== lastData) {
-                        window.location.reload(); // Reload the window if data has changed
+                        window.location.reload();
                     }
-                    lastData = data; // Update the last fetched data
+                    lastData = data;
                 })
                 .catch(error => {
                     console.error('Error:', error);
                 });
         }
-
-        // Function to initiate long polling
         function startLongPolling() {
-            setInterval(checkForChanges, 3000); // Poll every 1 second
+            setInterval(checkForChanges, 3000);
         }
-
-        // Start long polling when the window loads
         window.addEventListener('load', () => {
             startLongPolling();
         });
