@@ -17,15 +17,9 @@
             <description>Traditional Japanese dish made with vinegared rice and various ingredients such as raw or cooked seafood, vegetables, and sometimes tropical fruits.</description>
             <image>sushi.jpg</image>
         </sushi>
-        <salad>
-            <id>meal-4</id>
-            <name>Salad</name>
-            <price>6.99</price>
-            <description>Healthy salad made with fresh vegetables and a variety of dressings.</description>
-            <image>salad.jpg</image>
-        </salad>
         
-    <Sipuds><name>Sipuds</name><price>25</price><description>Masarap</description><id>ybpaw</id><image>sandwich.jpg</image></Sipuds></meals>
+        
+    <Sipuds><name>Sipud</name><price>25</price><description>Masarap</description><id>ybpaw</id><image>chips.jpg</image></Sipuds></meals>
     <snacks>
         
         
