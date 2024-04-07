@@ -13,8 +13,6 @@
             }
             $orders_array[] = $order_data;
         }
-    } else {
-        echo "No orders found.";
     }
     if (isset($_POST['delete_order'])) {
             $order_id = $_POST['order_id'];
