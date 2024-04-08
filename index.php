@@ -188,6 +188,15 @@
                 <button id="close-button">Close</button>
             </span>
         </dialog>
-        <a href="#" class="contact-us material-symbols-outlined">question_mark</a>
+        <button id='contact-us' class="contact-us material-symbols-outlined">question_mark</button>
+        <script>
+            document.getElementById('contact-us').addEventListener('click', () => {
+            let currentUrl = window.location.href
+            let url = new URL(currentUrl)
+            let oi = url.searchParams.get('orderId')
+            let table = url.searchParams.get('table')
+            window.location.href = `http://localhost/orderSystem/profile.php?orderId=${oi}&table=${table}`
+            })
+        </script>
     </body>
 </html>

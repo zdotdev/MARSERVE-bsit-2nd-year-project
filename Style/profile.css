@@ -7,8 +7,7 @@
   padding: 0;
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  color: black;
+  color: var(--primary);
   scroll-behavior: smooth;
 }
 
@@ -43,12 +42,9 @@
 
   --neutral-black: hsl(0, 0%, 5%);
 }
-
 /* start */
-
-/* header */
-body {
-  background-color: var(--secondary);
+body{
+    background-color: var(--secondary);
 }
 header {
   display: flex;
@@ -66,75 +62,32 @@ header h1 {
   color: var(--secondary);
   text-shadow: 0.07rem 0.07rem 0rem var(--neutral-black);
 }
-.arrow{
-  margin: 0rem 8rem;
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.arrow {
+    margin-top: 6rem;
+  margin-left: 8rem;
   text-decoration: none;
   font-size: 2rem;
-}
-.h{
-  display: flex;
-  flex-direction: column;
-  padding: 0rem 20rem;
-}
-.h h2{
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary);
-  margin: 2rem 0rem;
-}
-#container{
-  padding: 6rem 0rem;
-}
-#card-container{
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--neutral-white);
-  border-radius: 1rem;
-  margin: 1rem;
-}
-.table-number{
-  background-color: var(--primary);
-  padding: 2rem;
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--secondary);
-  font-weight: 700;
-  font-size: 2rem;
-}
-form,
-.table-bill,
-.table-orders{
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-button{
-  background-color: var(--primary);
-  color: var(--neutral-white);
-  padding: .4rem .8rem;
-  border: none;
-  border-radius: .6rem;
-}
-.button-container{
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-#show-history {
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.8rem;
-  border: 2px solid var(--primary);
-  background-color: var(--primary);
-  color: var(--neutral-white);
-  box-shadow: 0.2rem 0.2rem 0.5rem var(--primary-300);
   cursor: pointer;
-  transition: transform 0.5s;
-  text-decoration: none;
-  margin: 0rem 8rem;
 }
-#show-history:hover {
-  transform: scale(1.1);
+section{
+    width: 50%;
+    background-color: var(--neutral-white);
+    margin: 2rem;
+    padding: 2rem;
+}
+.profile-image{
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+hr{
+    margin: 2rem 0;
+    border: .1rem solid var(--neutral-white-400);
 }
