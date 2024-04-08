@@ -66,13 +66,9 @@ header h1 {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    flex-wrap: wrap;
-    height: 100vh;
     background-color: var(--neutral-white-500);
 }
 a{
-    width: auto;
-    height: 2rem;
     background-color: var(--secondary-900);
     padding: 1.8rem;
     color: var(--neutral-white-500);

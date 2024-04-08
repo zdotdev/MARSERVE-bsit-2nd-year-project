@@ -101,3 +101,15 @@ main{
     border-radius: 0.5rem;
     box-shadow: .2rem .2rem .5rem var(--neutral-black);
 }
+
+@media screen and (max-width: 480px){
+    main{
+        padding: 8rem 2rem;
+    }
+    .each-orders{
+        margin: .8rem;
+    }
+    .buy-again-div a{
+        margin: 2rem;
+    }
+}
