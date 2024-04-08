@@ -49,6 +49,7 @@
 /* header */
 body {
   background-color: var(--secondary);
+  width: 100%;
 }
 header {
   display: flex;
@@ -84,6 +85,7 @@ header h1 {
 }
 #container{
   padding: 6rem 0rem;
+  width: 100%;
 }
 #card-container{
   display: flex;
@@ -137,4 +139,95 @@ button{
 }
 #show-history:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 480px) {
+  body{
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.2rem;
+  }
+  .arrow {
+  margin: 0rem 2rem;
+  }
+  #show-history {
+  margin: 0rem 2rem;
+  }
+  #container {
+    width: 100%;
+  }
+  .button-container {
+    width: 100%;
+  }
+  .h{
+    padding: 0rem 2rem;
+  }
+  .table-number {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  form,
+  .table-bill,
+  .table-orders{
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  body{
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.2rem;
+  }
+  .arrow {
+  margin: 0rem 2rem;
+  }
+  #show-history {
+  margin: 0rem 2rem;
+  }
+  #container {
+    width: 100%;
+  }
+  .button-container {
+    width: 100%;
+  }
+  .h{
+    padding: 0rem 2rem;
+  }
+  .table-number {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  form,
+  .table-bill,
+  .table-orders{
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  .arrow {
+  margin: 0rem 2rem;
+  }
+  .button-container {
+    width: 100%;
+  }
+  #show-history {
+  margin: 0rem 3rem;
+  }
+  .h{
+    padding: 0rem 2rem;
+  }
+  .table-number {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  form,
+  .table-bill,
+  .table-orders{
+    padding: 1rem;
+  }
 }
