@@ -21,20 +21,8 @@
         
     <Nutsy><name>Nuts</name><price>5.99</price><description>Assorted nuts for a healthy and satisfying snack.</description><id>snack-4</id><image>burger.jpg</image></Nutsy></snacks>
     <beverages>
-        <soda>
-            <id>beverage-0</id>
-            <name>Soda</name>
-            <price>1.99</price>
-            <description>Refreshing carbonated beverage in various flavors.</description>
-            <image>pizza.jpg</image>
-        </soda>
-        <juice>
-            <id>beverage-1</id>
-            <name>Juice</name>
-            <price>2.49</price>
-            <description>Natural fruit juice made from fresh fruits.</description>
-            <image>pizza.jpg</image>
-        </juice>
+        
+        
         <water>
             <id>beverage-2</id>
             <name>Water</name>

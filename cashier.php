@@ -15,6 +15,22 @@
         }
     }
     if (isset($_POST['delete_order'])) {
+            $totalOrders = $_POST['total_orders'];
+            $totalBill = $_POST['total_bill'];
+            $table = $_POST['table_number'];
+            $historyFile = './Data/history.xml';
+            if (file_exists($historyFile)) {
+                $historyXML = simplexml_load_file($historyFile) or die("Error: Cannot create object");
+            } else {
+                $historyXML = new SimpleXMLElement('<?xml version="1.0"?><orders></orders>');
+            }
+            $order = $historyXML->addChild('history');
+            $order->addChild('total_orders', $totalOrders);
+            $order->addChild('total_bill', $totalBill);
+            $order->addChild('table_number', $table);
+            $order->addChild('order_id', $random_letters);
+            $historyXML->asXML($historyFile);
+
             $order_id = $_POST['order_id'];
             $xml = simplexml_load_file($data);
             if ($xml === false) {
@@ -61,7 +77,10 @@
                     <p class='table-bill'>Bill: {$order_data['total_bill']} php</p>
                     <form method='post'>
                         <input type='hidden' name='order_id' value='{$order_data['order_id']}' />
-                        <button type='submit' name='delete_order'>Delete</button>
+                        <input type='hidden' name='total_orders' value='{$order_data['total_orders']}'/>
+                        <input type='hidden' name='total_bill' value='{$order_data['total_bill']}'/>
+                        <input type='hidden' name='table_number' value='{$order_data['table_number']}'/>
+                        <button type='submit' name='delete_order'>Paid</button>
                     </form>
                 </div>";
             }
