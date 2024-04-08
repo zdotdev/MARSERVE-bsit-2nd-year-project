@@ -67,6 +67,9 @@
     </header>
     <div id="container">
         <a href="http://localhost/orderSystem/admin.php" class="material-symbols-outlined arrow">arrow_back</a>
+        <div class='button-container'>
+            <a href="http://localhost/orderSystem/history.php" id="show-history">Show History</a>
+        </div>
         <div class="h">
             <h2>Orders:</h2>
             <?php

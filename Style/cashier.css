@@ -118,3 +118,21 @@ button{
   border: none;
   border-radius: .6rem;
 }
+.button-container{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+#show-history {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.8rem;
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--neutral-white);
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--primary-300);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+#show-history:hover {
+  transform: scale(1.1);
+}
