@@ -5,21 +5,15 @@
         
         <pasta>
             <id>meal-2</id>
-            <name>Pasta</name>
+            <name>Pastatas</name>
             <price>7.99</price>
             <description>Chupaghetti</description>
-            <image>pasta.jpg</image>
+            <image>sandwich.jpg</image>
         </pasta>
-        <sushi>
-            <id>meal-3</id>
-            <name>Sushi</name>
-            <price>12.99</price>
-            <description>Traditional Japanese dish made with vinegared rice and various ingredients such as raw or cooked seafood, vegetables, and sometimes tropical fruits.</description>
-            <image>sushi.jpg</image>
-        </sushi>
         
         
-    <Sipuds><name>Sipud</name><price>25</price><description>Masarap</description><id>ybpaw</id><image>chips.jpg</image></Sipuds></meals>
+        
+    </meals>
     <snacks>
         
         
@@ -49,13 +43,7 @@
             <image>pizza.jpg</image>
         </water>
         
-        <icedTea>
-            <id>beverage-4</id>
-            <name>Iced</name>
-            <price>1.99</price>
-            <description>Cool and refreshing tea with ice.</description>
-            <image>popcorn.jpg</image>
-        </icedTea>
+        
         
     </beverages>
     <sweets>
@@ -64,5 +52,5 @@
         
         
         
-    <banana><name>banana</name><price>12</price><description>banana</description><id>xhkbg</id><image>snackBG.jpg</image></banana></sweets>
+    <Candy><name>Candy</name><price>0.01</price><description>wedfe</description><id>cgaou</id><image>sweetBG.jpg</image></Candy></sweets>
 </foods>

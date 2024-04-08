@@ -168,6 +168,7 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./Style/admin.css">
+        <script defer src="./JavaScript/admin.js"></script>
         <title>Admin</title>
     </head>
     <body>
@@ -192,19 +193,23 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
             <div class="container">
                 <div class="sub-container">
                     <section class="form-section">
-                        <form id="save-order-form" action="" method="post">
-                            <input type="text" name="food_name" placeholder="Food Name">
-                            <input type="number" step="0.01" name="food_price" placeholder="Price">
-                            <input type="text" name="food_description" placeholder="Description">
-                            <input type="file" name="food_image">
-                            <select name="food_category">
-                                <option value="meals" selected>Meal</option>
-                                <option value="snacks">Snack</option>
-                                <option value="beverages">Beverage</option>
-                                <option value="sweets">Sweet</option>
-                            </select>
-                            <button type="submit" name="save_food" id="save-order-btn">Add Food Item</button>
-                        </form>
+                        <button id="add-product">Add Product</button>
+                        <dialog id="add-product-dialog">
+                            <form id="save-order-form" action="" method="post">
+                                <input type="text" name="food_name" placeholder="Food Name">
+                                <input type="number" step="0.01" name="food_price" placeholder="Price">
+                                <input type="text" name="food_description" placeholder="Description">
+                                <input type="file" name="food_image">
+                                <select name="food_category">
+                                    <option value="meals" selected>Meal</option>
+                                    <option value="snacks">Snack</option>
+                                    <option value="beverages">Beverage</option>
+                                    <option value="sweets">Sweet</option>
+                                </select>
+                                <button type="submit" name="save_food" id="save-order-btn">Add Food Item</button>
+                                <button type="button" id="close-add-product-dialog">Close</button>
+                            </form>
+                        </dialog>
                     </section>
                     <section id="meals">
                         <h2 class="f-title">Meals:</h2>
@@ -217,27 +222,36 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                             <h2 class='food-title'>{$meal_data['name']}</h2>
                                             <p class='food-desc' id='order-count-{$meal_data['description']}'>{$meal_data['description']}</p>
                                             <h3 class='food-price'>Price: {$meal_data['price']} php</h3>
-                                            <form class='form' method='post'>
-                                                <input type='hidden' name='meals_id' value='{$meal_data['id']}' />
-                                                <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
-                                                <button type='button' class='edit-btn' id='edit-btn-{$meal_data['id']}'>Edit</button>
-                                            </form>
                                         </div>
-                                        <dialog id='edit-dialog-{$meal_data['id']}'>
+                                        <dialog class='edit-dialog-cont' id='edit-dialog-{$meal_data['id']}'>
                                             <form id='save-edited-form' action='' method='post'>
+                                                <img src='./Image/{$meal_data['image']}' alt='{$meal_data['id']}' class='edit-image'>
                                                 <input type='hidden' name='edit_food_id' placeholder='Food Id' value='{$meal_data['id']}'>
-                                                <input type='text' name='edit_food_name' placeholder='Food Name' value='{$meal_data['name']}'>
-                                                <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$meal_data['price']}'>
-                                                <textarea name='edit_food_description' placeholder='Description' cols='30' rows='10'>{$meal_data['description']}</textarea>
-                                                <input type='file' name='edit_food_image'>
+                                                <label>
+                                                    Name: <input type='text' name='edit_food_name' placeholder='Food Name' value='{$meal_data['name']}'>
+                                                </label>
+                                                <label>
+                                                    Price: <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$meal_data['price']}'>
+                                                </label>
+                                                <label>
+                                                    Details: <input type='text' name='edit_food_description' placeholder='Description' value='{$meal_data['description']}'>
+                                                </label>
+                                                <label>
+                                                    Image: <input type='file' name='edit_food_image'>
+                                                </label>
                                                 <select name='edit_food_category'>
                                                     <option value='meals' selected>Meal</option>
                                                     <option value='snacks'>Snack</option>
                                                     <option value='beverages'>Beverage</option>
                                                     <option value='sweets'>Sweet</option>
                                                 </select>
-                                                <button type='button' class='close-edit-dialog' id='close-edit-dialog-{$meal_data['id']}'>Close</button>
-                                                <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                <div class='button-div'>
+                                                    <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                    <form class='form' method='post'>
+                                                        <input type='hidden' name='meals_id' value='{$meal_data['id']}' />
+                                                        <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
+                                                    </form>    
+                                                </div>    
                                             </form>
                                         </dialog>
                                     </div>";
@@ -256,27 +270,36 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                             <h2 class='food-title'>{$snack_data['name']}</h2>
                                             <p class='food-desc'>{$snack_data['description']}</p>
                                             <h3 class='food-price'>Price: {$snack_data['price']} php</h3>
-                                            <form class='form' method='post'>
-                                                <input type='hidden' name='snacks_id' value='{$snack_data['id']}' />
-                                                <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
-                                                <button type='button' class='edit-btn' id='edit-btn-{$snack_data['id']}'>Edit</button>
-                                            </form>    
                                         </div>
-                                        <dialog id='edit-dialog-{$snack_data['id']}'>
+                                        <dialog class='edit-dialog-cont' id='edit-dialog-{$snack_data['id']}'>
                                             <form id='save-edited-form' action='' method='post'>
+                                                <img src='./Image/{$snack_data['image']}' alt='{$snack_data['id']}' class='edit-image'>
                                                 <input type='hidden' name='edit_food_id' placeholder='Food Id' value='{$snack_data['id']}'>
-                                                <input type='text' name='edit_food_name' placeholder='Food Name' value='{$snack_data['name']}'>
-                                                <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$snack_data['price']}'>
-                                                <textarea name='edit_food_description' placeholder='Description' cols='30' rows='10'>{$snack_data['description']}</textarea>
-                                                <input type='file' name='edit_food_image'>
+                                                <label>
+                                                    Name: <input type='text' name='edit_food_name' placeholder='Food Name' value='{$snack_data['name']}'>
+                                                </label>
+                                                <label>
+                                                    Price: <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$snack_data['price']}'>
+                                                </label>
+                                                <label>
+                                                    Details: <input type='text' name='edit_food_description' placeholder='Description' value='{$snack_data['description']}'>
+                                                </label>
+                                                <label>
+                                                    Image: <input type='file' name='edit_food_image'>
+                                                </label>
                                                 <select name='edit_food_category'>
                                                     <option value='meals' selected>Meal</option>
                                                     <option value='snacks'>Snack</option>
                                                     <option value='beverages'>Beverage</option>
                                                     <option value='sweets'>Sweet</option>
                                                 </select>
-                                                <button type='button' class='close-edit-dialog' id='close-edit-dialog-{$snack_data['id']}'>Close</button>
-                                                <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                <div class='button-div'>
+                                                    <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                    <form class='form' method='post'>
+                                                        <input type='hidden' name='snacks_id' value='{$snack_data['id']}' />
+                                                        <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
+                                                    </form>    
+                                                </div>    
                                             </form>
                                         </dialog>
                                     </div>";
@@ -295,27 +318,36 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                             <h2 class='food-title'>{$beverage_data['name']}</h2>
                                             <p class='food-desc'>{$beverage_data['description']}</p>
                                             <h3 class='food-price'>Price: {$beverage_data['price']} php</h3>
-                                            <form class='form' method='post'>
-                                                <input type='hidden' name='beverages_id' value='{$beverage_data['id']}' />
-                                                <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
-                                            <button type='button' class='edit-btn' id='edit-btn-{$beverage_data['id']}'>Edit</button>
-                                        </form>
                                         </div>
-                                        <dialog id='edit-dialog-{$beverage_data['id']}'>
+                                        <dialog class='edit-dialog-cont' id='edit-dialog-{$beverage_data['id']}'>
                                             <form id='save-edited-form' action='' method='post'>
+                                                <img src='./Image/{$beverage_data['image']}' alt='{$beverage_data['id']}' class='edit-image'>
                                                 <input type='hidden' name='edit_food_id' placeholder='Food Id' value='{$beverage_data['id']}'>
-                                                <input type='text' name='edit_food_name' placeholder='Food Name' value='{$beverage_data['name']}'>
-                                                <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$beverage_data['price']}'>
-                                                <textarea name='edit_food_description' placeholder='Description' cols='30' rows='10'>{$beverage_data['description']}</textarea>
-                                                <input type='file' name='edit_food_image'>
+                                                <label>
+                                                    Name: <input type='text' name='edit_food_name' placeholder='Food Name' value='{$beverage_data['name']}'>
+                                                </label>
+                                                <label>
+                                                    Price: <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$beverage_data['price']}'>
+                                                </label>
+                                                <label>
+                                                    Details: <input type='text' name='edit_food_description' placeholder='Description' value='{$beverage_data['description']}'>
+                                                </label>
+                                                <label>
+                                                    Image: <input type='file' name='edit_food_image'>
+                                                </label>
                                                 <select name='edit_food_category'>
                                                     <option value='meals' selected>Meal</option>
                                                     <option value='snacks'>Snack</option>
                                                     <option value='beverages'>Beverage</option>
                                                     <option value='sweets'>Sweet</option>
                                                 </select>
-                                                <button type='button' class='close-edit-dialog' id='close-edit-dialog-{$beverage_data['id']}'>Close</button>
+                                                <div class='button-div'>
                                                 <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                <form class='form' method='post'>
+                                                    <input type='hidden' name='beverages_id' value='{$beverage_data['id']}' />
+                                                    <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
+                                                </form>
+                                                </div>
                                             </form>
                                         </dialog>
                                     </div>";
@@ -334,27 +366,36 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                             <h2 class='food-title'>{$sweet_data['name']}</h2>
                                             <p class='food-desc'>{$sweet_data['description']}</p>
                                             <h3 class='food-price'>Price: {$sweet_data['price']} php</h3>
-                                            <form class='form' method='post'>
-                                                <input type='hidden' name='sweets_id' value='{$sweet_data['id']}' />
-                                                <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
-                                                <button type='button' class='edit-btn' id='edit-btn-{$sweet_data['id']}'>Edit</button>
-                                            </form>
                                         </div>
-                                        <dialog id='edit-dialog-{$sweet_data['id']}'>
+                                        <dialog class='edit-dialog-cont' id='edit-dialog-{$sweet_data['id']}'>
                                             <form id='save-edited-form' action='' method='post'>
+                                                <img src='./Image/{$sweet_data['image']}' alt='{$sweet_data['id']}' class='edit-image'>
                                                 <input type='hidden' name='edit_food_id' placeholder='Food Id' value='{$sweet_data['id']}'>
-                                                <input type='text' name='edit_food_name' placeholder='Food Name' value='{$sweet_data['name']}'>
-                                                <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$sweet_data['price']}'>
-                                                <textarea name='edit_food_description' placeholder='Description' cols='30' rows='10'>{$sweet_data['description']}</textarea>
-                                                <input type='file' name='edit_food_image'>
+                                                <label>
+                                                    Name: <input type='text' name='edit_food_name' placeholder='Food Name' value='{$sweet_data['name']}'>
+                                                </label>
+                                                <label>
+                                                    Price: <input type='number' step='0.01' name='edit_food_price' placeholder='Price' value='{$sweet_data['price']}'>
+                                                </label>
+                                                <label>
+                                                    Details: <input type='text' name='edit_food_description' placeholder='Description' value='{$sweet_data['description']}'>
+                                                </label>
+                                                <label>
+                                                    Image: <input type='file' name='edit_food_image'>
+                                                </label>
                                                 <select name='edit_food_category'>
                                                     <option value='meals' selected>Meal</option>
                                                     <option value='snacks'>Snack</option>
                                                     <option value='beverages'>Beverage</option>
                                                     <option value='sweets'>Sweet</option>
                                                 </select>
-                                                <button type='button' class='close-edit-dialog' id='close-edit-dialog-{$sweet_data['id']}'>Close</button>
-                                                <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                <div class='button-div'>
+                                                    <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                    <form class='form' method='post'>
+                                                        <input type='hidden' name='sweets_id' value='{$sweet_data['id']}' />
+                                                        <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
+                                                    </form>
+                                                <div>
                                             </form>
                                         </dialog>
                                     </div>";
@@ -365,27 +406,5 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                 </div>
             </div>
         </main>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                let editButtons = document.querySelectorAll('.edit-btn');
-                editButtons.forEach(function(btn) {
-                    let foodId = btn.parentNode.parentNode.parentNode.getAttribute('data-foodId');
-                    btn.addEventListener('click', function() {
-                        document.getElementById(`edit-dialog-${foodId}`).showModal();
-                    });
-                });
-                let closeButtons = document.querySelectorAll('.close-edit-dialog');
-                closeButtons.forEach(function(btn) {
-                    let foodId = btn.parentNode.parentNode.parentNode.getAttribute('data-foodId');
-                    btn.addEventListener('click', function() {
-                        document.getElementById(`edit-dialog-${foodId}`).close();
-                    });
-                });
-            });
-            document.querySelectorAll('.food-desc').forEach(function(desc) {
-                let descText = desc.textContent;
-                desc.textContent = descText.substring(0, 10) + '...';
-            });
-        </script>
     </body>
 </html>

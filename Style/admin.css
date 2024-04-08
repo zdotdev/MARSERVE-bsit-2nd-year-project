@@ -96,9 +96,22 @@ nav{
 /* form section */
 .form-section{
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    padding: 2rem;
+    padding: 0rem 8rem;
+}
+#add-product{
+  padding: .4rem .8rem;
+  border-radius: .8rem;
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--neutral-white);
+  box-shadow: .2rem .2rem .5rem var(--primary-300);
+  cursor: pointer;
+  transition: transform .5s;
+}
+#add-product:hover{
+  transform: scale(1.1);
 }
 
 /* f-container */
@@ -154,8 +167,8 @@ nav{
     width: 100%;
     padding-top: 2rem;
 }
-.delete-button,
-.edit-btn{
+#save-edited-btn,
+.delete-button{
     padding: .2rem .8rem;
     background-color: var(--primary);
     color: var(--neutral-white);
@@ -165,7 +178,7 @@ nav{
     transition: transform .5s;
 }
 .delete-button:hover,
-.edit-btn:hover{
+#save-edited-btn:hover{
     transform: scale(1.1);
 }
 .sidebar-container {
@@ -239,4 +252,40 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.edit-dialog-cont,
+#add-product-dialog {
+  max-width: none;
+  max-height: none;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: 1.2rem solid var(--primary);
+  background-color: var(--neutral-white);
+}
+#food-container{
+  cursor: pointer;
+}
+#save-edited-form{
+  display: flex;
+  flex-direction: column;
+}
+.edit-image{
+  width: 28rem;
+  height: 16rem;
+}
+#save-edited-form input{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin: .4rem;
+}
+.button-div{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  align-items: center;
 }
