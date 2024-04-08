@@ -19,3 +19,18 @@ document
   .addEventListener('click', function () {
     document.getElementById('add-product-dialog').close()
   })
+let arr = []
+document.querySelectorAll('.food-title').forEach(element => {
+  arr.push(element.textContent)
+})
+
+document.querySelector('.search-button').addEventListener('click', function () {
+  let search = document.getElementById('search-input').value
+  let toLow = search.toLowerCase()
+  let upperFirstLetter = toLow.charAt(0).toUpperCase() + toLow.slice(1)
+  if (search !== '') {
+    document.querySelector('.search-button').href = `#${
+      arr[arr.indexOf(upperFirstLetter)]
+    }`
+  }
+})
