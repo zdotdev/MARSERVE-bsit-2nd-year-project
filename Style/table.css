@@ -65,12 +65,13 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
-    background-color: var(--neutral-white-500);
+    padding-top: 6rem;
 }
 a{
     background-color: var(--secondary-900);
-    padding: 1.8rem;
+    padding: .8rem;
     color: var(--neutral-white-500);
     font-size: 1.4rem;
     font-weight: 600;

@@ -14,14 +14,11 @@
             <h1>MARSERVE</h1>
         </header>
         <main id="main">
+            <a href="http://localhost/orderSystem/index.php?table=1">Table 1</a>
+            <a href="http://localhost/orderSystem/index.php?table=2">Table 2</a>
+            <a href="http://localhost/orderSystem/index.php?table=3">Table 3</a>
+            <a href="http://localhost/orderSystem/index.php?table=4">Table 4</a>
+            <a href="http://localhost/orderSystem/index.php?table=5">Table 5</a>
         </main>
-        <script>
-            for (let i = 1; i <= 5; i++) {
-                const link = document.createElement('a');
-                link.href = `http://localhost/orderSystem/index.php?table=${i}`;
-                link.textContent = `Table ${i}`;
-                document.getElementById('main').appendChild(link);
-            }
-        </script> 
     </body>
 </html>
