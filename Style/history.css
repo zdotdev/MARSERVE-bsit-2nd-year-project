@@ -118,3 +118,43 @@ button {
   border: none;
   border-radius: 0.6rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .arrow{
+    margin: 0rem 4rem;
+  }
+  .h{
+    padding: 0rem 6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .arrow{
+    margin: 0rem 2rem;
+  }
+  .h{
+    padding: 0rem 4rem;
+  }
+  .table-number{
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  form,
+  .table-bill,
+  .table-orders {
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .h {
+    padding: 0rem 2rem;
+  }
+  .table-number {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  form,
+  .table-bill,
+  .table-orders {
+    padding: 0.5rem;
+  }
+}
