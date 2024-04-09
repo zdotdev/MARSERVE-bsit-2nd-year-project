@@ -74,6 +74,8 @@ main{
   text-decoration: none;
   font-size: 2rem;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 section{
     width: 50%;
@@ -90,4 +92,22 @@ section{
 hr{
     margin: 2rem 0;
     border: .1rem solid var(--neutral-white-400);
+}
+@media screen and (max-width: 768px){
+  section{
+    width: 70%;
+  }
+  .arrow{
+    margin-top: 6rem;
+    margin-left: 4rem;
+  }
+}
+@media screen and (max-width: 480px){
+  section{
+    width: 80%;
+  }
+  .profile-image{
+    width: 12rem;
+    height: 12rem;
+  }
 }
