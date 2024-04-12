@@ -16,6 +16,7 @@
     </header>
     <button id="home" class="material-symbols-outlined arrow">arrow_back</button>
     <main>
+        <strong class='head-title'>Seeking guidance? Our team is here to lend a hand</strong>
         <section>
             <img src="./Image/mirel.jpg" alt="marielle smthng" class="profile-image">
             <h2><strong>Mirelle Lynch R. Paez</strong></h2>

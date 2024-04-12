@@ -72,7 +72,7 @@ body{
     z-index: 1;
 }
 .header-title {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #FFDB58;
     text-shadow: 0.07rem 0.07rem 0rem var(--neutral-black-500);

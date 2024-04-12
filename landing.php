@@ -71,7 +71,7 @@ foreach ($orders->order as $order) {
                     arr.push(parseFloat(item));
                 });
             });
-            document.getElementById('total').textContent = parseInt(arr.reduce((total, num) => total + num, 0));
+            document.getElementById('total').textContent = parseFloat(arr.reduce((total, num) => total + num, 0)).toFixed(2);
         </script>
     </body>
 </html>
