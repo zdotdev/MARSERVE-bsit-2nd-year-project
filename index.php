@@ -185,6 +185,7 @@
                 </div>
             </div>
             <span class="dialog-food-span">
+                <button id="add">Add</button>
                 <button id="close-button">Close</button>
             </span>
         </dialog>

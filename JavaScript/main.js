@@ -45,6 +45,11 @@ function updateTotalOrders () {
   totalOrdersText = totalOrdersText.slice(0, -2)
   document.getElementById('total-orders').textContent = totalOrdersText || 0
 }
+document.getElementById('add').addEventListener('click', () => {
+  updateTotalBill()
+  updateTotalOrders()
+  console.log('add')
+})
 document.getElementById('increment').addEventListener('click', () => {
   let foodName = document.getElementById('dialog-food-name').textContent
   let price = parseFloat(
@@ -56,8 +61,6 @@ document.getElementById('increment').addEventListener('click', () => {
   orderCounts[foodName]++
   document.getElementById('order-count').textContent = orderCounts[foodName]
   totalPrice.push(price)
-  updateTotalBill()
-  updateTotalOrders()
   document.getElementById(`order-count-${foodName}`).textContent =
     orderCounts[foodName] > 0 ? orderCounts[foodName] : ''
 })

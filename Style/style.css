@@ -327,7 +327,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
+#add,
 #close-button{
     font-size: 1.1rem;
     padding: 0.6rem 1rem;
