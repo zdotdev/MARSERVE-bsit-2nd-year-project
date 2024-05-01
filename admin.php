@@ -184,10 +184,10 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
             <div>
                 <p class="sidebar-title">Foods and Beverages:</p>
                 <ul class="sidebar-ul">
-                    <li><a href="#" class="sidebar-li">Meals</a></li>
-                    <li><a href="#" class="sidebar-li">Snacks</a></li>
-                    <li><a href="#" class="sidebar-li">Beverages</a></li>
-                    <li><a href="#" class="sidebar-li">Sweets</a></li>
+                    <li><a href="#meals" class="sidebar-li">Meals</a></li>
+                    <li><a href="#snacks" class="sidebar-li">Snacks</a></li>
+                    <li><a href="#beverages" class="sidebar-li">Beverages</a></li>
+                    <li><a href="#sweets" class="sidebar-li">Sweets</a></li>
                 </ul>
             </div>
             <div class="vob">

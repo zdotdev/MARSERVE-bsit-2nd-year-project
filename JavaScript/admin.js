@@ -34,3 +34,15 @@ document.querySelector('.search-button').addEventListener('click', function () {
     }`
   }
 })
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('form')
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+      let isConfirmed = confirm('Are you sure you want to delete this meal?')
+      if (isConfirmed) {
+        this.submit()
+      }
+    })
+  }
+})
