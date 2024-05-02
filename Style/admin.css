@@ -193,6 +193,7 @@ nav{
     width: 100%;
     padding-top: 2rem;
 }
+#delbut,
 #save-edited-btn,
 .delete-button{
     padding: .2rem .8rem;
@@ -278,6 +279,11 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.dayalog{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 .edit-dialog-cont,
 #add-product-dialog {

@@ -253,10 +253,14 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                                 </select>
                                                 <div class='button-div'>
                                                     <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                    <button id='delbut' type='button' data-log='{$meal_data['id']}'>Delete</button>
+                                                    <dialog class='dayalog' id='dialog-{$meal_data['id']}'>
                                                     <form class='form' method='post'>
+                                                        <p>Are you sure you want to delete this food?</>
                                                         <input type='hidden' name='meals_id' value='{$meal_data['id']}' />
                                                         <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
-                                                    </form>    
+                                                    </form>
+                                                    </dialog>
                                                 </div>    
                                             </form>
                                         </dialog>
@@ -302,10 +306,14 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                                 </select>
                                                 <div class='button-div'>
                                                     <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                    <button id='delbut' type='button' data-log='{$snack_data['id']}'>Delete</button>
+                                                    <dialog class='dayalog' id='dialog-{$snack_data['id']}'>
                                                     <form class='form' method='post'>
+                                                        <p>Are you sure you want to delete this food?</>
                                                         <input type='hidden' name='snacks_id' value='{$snack_data['id']}' />
                                                         <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
                                                     </form>    
+                                                    </dialog>
                                                 </div>    
                                             </form>
                                         </dialog>
@@ -351,10 +359,14 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                                 </select>
                                                 <div class='button-div'>
                                                 <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                <button id='delbut' type='button' data-log='{$beverage_data['id']}'>Delete</button>
+                                                <dialog class='dayalog' id='dialog-{$beverage_data['id']}'>
                                                 <form class='form' method='post'>
+                                                    <p>Are you sure you want to delete this food?</>
                                                     <input type='hidden' name='beverages_id' value='{$beverage_data['id']}' />
                                                     <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
                                                 </form>
+                                                </dialog>
                                                 </div>
                                             </form>
                                         </dialog>
@@ -400,10 +412,14 @@ if (isset($_POST['delete_food']) && isset($_POST['sweets_id'])) {
                                                 </select>
                                                 <div class='button-div'>
                                                     <button type='submit' name='save_edited_food' id='save-edited-btn'>Save Food Item</button>
+                                                    <button id='delbut' type='button' data-log='{$sweet_data['id']}'>Delete</button>
+                                                    <dialog class='dayalog' id='dialog-{$sweet_data['id']}'>
                                                     <form class='form' method='post'>
+                                                        <p>Are you sure you want to delete this food?</>
                                                         <input type='hidden' name='sweets_id' value='{$sweet_data['id']}' />
                                                         <button type='submit' class='delete-button' name='delete_food' id='delete_food'>Delete</button>
                                                     </form>
+                                                    </dialog>
                                                 <div>
                                             </form>
                                         </dialog>
