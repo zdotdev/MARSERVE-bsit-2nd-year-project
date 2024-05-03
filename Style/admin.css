@@ -282,8 +282,15 @@ nav{
 }
 .dayalog{
   padding: 2rem;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  background-color: var(--neutral-white);
+}
+.dayalog.show{
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 .edit-dialog-cont,
 #add-product-dialog {

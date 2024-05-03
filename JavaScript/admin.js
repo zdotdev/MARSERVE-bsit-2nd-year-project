@@ -40,7 +40,12 @@ delbut.forEach(element => {
   element.addEventListener('click', function () {
     console.log('clicked')
     let id = element.dataset.log
-
-    document.getElementById(`dialog-${id}`).showModal()
+    document.getElementById(`dialog-${id}`).classList.add('show')
+  })
+})
+document.querySelectorAll('.no').forEach(element => {
+  element.addEventListener('click', function () {
+    let id = element.dataset.log
+    document.getElementById(`dialog-${id}`).classList.remove('show')
   })
 })
